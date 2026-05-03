@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "architexture"
+version = "0.1.0"
+description = "Proposal-space commitment above a frozen SAM proposal bank for texture partition recovery"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "ArchiTexture Authors" }]
+dependencies = [
+  "numpy",
+  "opencv-python",
+  "scikit-learn",
+  "torch"
+]
+
+[project.scripts]
+architexture = "texturesam_v2.cli:main"
+texturesam-v2-rwtd = "texturesam_v2.cli:main"
+
+[tool.setuptools]
+packages = ["texturesam_v2"]

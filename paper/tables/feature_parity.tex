@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{0.98}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}llcccc@{}}
+\toprule
+Dataset & Eval view & SAM2 coarse-only & SAM3 coarse-only & SAM2 flip-avg & SAM3 flip-avg \\
+\midrule
+RWTD & partition-invariant & 0.8561 / 0.7472 & 0.8235 / 0.6984 & 0.8278 / 0.7013 & 0.8397 / 0.7258 \\
+CAID & partition-invariant & 0.7263 / 0.5673 & 0.6743 / 0.4956 & 0.6620 / 0.4605 & 0.6588 / 0.4507 \\
+STLD & direct foreground & 0.7908 / 0.6864 & 0.4682 / 0.1859 & 0.8064 / 0.7089 & 0.7534 / 0.6194 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Archived frozen-feature parity summary from the site bundle. Each cell is reported as mIoU / ARI. This table is diagnostic only and is not used as a matched comparison to the proposal-space evaluator.}
+\label{tab:feature_parity}
+\end{table}

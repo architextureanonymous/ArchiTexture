@@ -1,0 +1,27 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{0.98}
+\begin{tabularx}{\textwidth}{@{}p{0.22\textwidth}Xcc@{}}
+\toprule
+Route & Variant & mIoU & ARI \\
+\midrule
+RWTD common-253 & Medoid single (generic bank baseline) & 0.4673 & 0.5087 \\
+RWTD common-253 & Learned single selector & 0.4512 & 0.5601 \\
+RWTD common-253 & Conservative core only & 0.4558 & 0.6812 \\
+RWTD common-253 & \sys{} final & 0.4645 & 0.7013 \\
+\midrule
+STLD common-182 & Proposal union & 0.2543 & 0.1731 \\
+STLD common-182 & Handcrafted consolidation & 0.3680 & 0.3987 \\
+STLD common-182 & PTD heuristic & 0.3757 & 0.4085 \\
+STLD common-182 & Learned single selector & 0.7196 & 0.7731 \\
+STLD common-182 & \sys{} final & 0.7195 & 0.7791 \\
+\midrule
+ControlNet bridge all-1742 & Proposal union (supporting route) & 0.6749 & 0.1188 \\
+ControlNet bridge all-1742 & \sys{} Stage-A (supporting route) & 0.6803 & 0.6039 \\
+\bottomrule
+\end{tabularx}
+\caption{Route-specific ablations using each route's native evaluator. On RWTD, learned top-1 selection helps but remains well below the structured commitment stack, while the conservative core already captures most of the coherence gain and the final rescue layer adds the remaining improvement. On STLD, by contrast, learned top-1 selection is already very strong, which highlights the difference between canonical synthetic partitions and the more fragmented natural RWTD scenes.}
+\label{tab:proposal_ablation}
+\end{table*}

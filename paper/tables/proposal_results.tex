@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{0.98}
+\begin{tabularx}{\textwidth}{@{}p{0.16\textwidth}p{0.28\textwidth}Xcc@{}}
+\toprule
+Benchmark & Evaluator / subset & Method & mIoU & ARI \\
+\midrule
+RWTD & official invariant, full-256 & SAM2.1-small original rerun~\cite{ravi2024sam2} & 0.1615 & 0.2183 \\
+RWTD & official invariant, full-256 & \sys{} final & 0.4611 & 0.6966 \\
+RWTD & official invariant, common-253 & TextureSAM public checkpoint rerun~\cite{texturesamrepo2026} & 0.4684 & 0.6163 \\
+RWTD & official invariant, common-253 & \sys{} final & 0.4645 & 0.7013 \\
+\midrule
+STLD & direct foreground, all-200 & SAM2.1-small original rerun~\cite{ravi2024sam2} & 0.3686 & 0.5269 \\
+STLD & direct foreground, all-200 & \sys{} final & 0.6705 & 0.7249 \\
+STLD & direct foreground, common-182 & TextureSAM public checkpoint rerun~\cite{texturesamrepo2026} & 0.5140 & 0.7526 \\
+STLD & direct foreground, common-182 & \sys{} final & 0.7195 & 0.7791 \\
+\bottomrule
+\end{tabularx}
+\caption{Main matched comparisons. Each block fixes the evaluator and subset convention before comparing methods. Supporting bridge and CAID routes are reported separately in the appendix so that the headline table remains protocol-matched.}
+\label{tab:proposal_results}
+\end{table*}

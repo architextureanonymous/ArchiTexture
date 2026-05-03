@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.30\textwidth}X@{}}
+\toprule
+Item & Value \\
+\midrule
+External training data & PTD only for the RWTD route; Brodatz-native synthetic supervision for STLD \\
+Encoder training data & 80{,}000 train / 20{,}000 val images per synthetic source \\
+RWTD benchmark usage & Evaluation only; no RWTD-label training or hyperparameter search \\
+Proposal source & Frozen SAM-style automatic masks \\
+RWTD/STLD deployed model & Swin-Base masked-region encoder with learned merge/core/repair modules \\
+ControlNet / CAID deployed model & PTD-trained \texttt{small\_pre\_ring\_hi} Stage-A bundle \\
+Primary evaluator & Official upstream no-aggregation evaluator on RWTD; route-matched evaluators elsewhere \\
+Comparator family & Raw SAM2.1-small plus reproduced/public TextureSAM checkpoints \\
+\bottomrule
+\end{tabularx}
+\caption{Compact reproducibility summary for the manuscript scope.}
+\label{tab:compact_repro}
+\end{table*}

@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{0pt}
+\renewcommand{\arraystretch}{1.02}
+\begin{tabularx}{\columnwidth}{@{}X@{}}
+\toprule
+\textbf{Algorithm 1: \sys{} proposal-space inference for image $x$} \\
+\midrule
+1. Load the frozen prompt-bank proposals $\mathcal{P}(x)$ and compute proposal descriptors $d_i$ for each $m_i \in \mathcal{P}(x)$. \\
+2. Score adjacent proposal pairs with $s(i,j)$ and threshold the compatibility graph. \\
+3. Form candidate merged regions from the graph connected components. \\
+4. Score each candidate with $q(C)$ and choose the conservative core $C^\star = \arg\max_C q(C)$. \\
+5. If the route is RWTD, build dense rescue candidates $R_k$ from the auxiliary bank $\mathcal{P}^{+}(x)$. \\
+6. Score each $(C^\star, R_k)$ with the safe-switch classifier $p_{\mathrm{safe}}(k)$ and gain regressor $g_{\mathrm{gain}}(k)$. \\
+7. Output the positive rescue candidate with highest predicted gain, if any; otherwise output $C^\star$. \\
+\bottomrule
+\end{tabularx}
+\caption{Compact pseudocode for the deployed decision layer. STLD and the appendix routes stop after Step~4 because they do not use the RWTD rescue layer.}
+\label{tab:algorithm_box}
+\end{table}

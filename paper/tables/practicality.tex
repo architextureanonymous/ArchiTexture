@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{0.98}
+\begin{tabularx}{\textwidth}{@{}p{0.14\textwidth}ccccccX@{}}
+\toprule
+Route & Prompt props & Merged comps & Dense props & Rescue cand. & s / img & Peak RSS & Reading \\
+\midrule
+RWTD Stage-A & 3.84 & 2.64 & -- & -- & 0.025 & 430 MiB & prompt-bank commitment only \\
+RWTD full & 3.84 & 2.64 & 38.05 & 11.72 & 0.378 & 637 MiB & dense rescue evaluated on the full set; 21/256 images switch \\
+STLD Stage-A & 1.78 & 2.32 & -- & -- & -- & -- & no rescue path; no separate runtime profile recorded \\
+\bottomrule
+\end{tabularx}
+\caption{Practicality profile of the deployed decision layer. RWTD timings come from measured full-dataset GPU profiles of the same frozen-bank pipeline. STLD shares the same Stage-A architecture and bank statistics, but no separate runtime profile was recorded in the repository.}
+\label{tab:practicality}
+\end{table*}

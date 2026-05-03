@@ -1,0 +1,14 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}XccccX@{}}
+\toprule
+Dataset / subset & Selector mIoU & Selector ARI & Final mIoU & Final ARI & Reading \\
+\midrule
+RWTD common-253 & 0.4512 & 0.5601 & 0.4645 & 0.7013 & Large ARI gap: fragmented natural scenes still need structured commitment above the frozen bank. \\
+STLD common-182 & 0.7196 & 0.7731 & 0.7195 & 0.7791 & Near-parity: a coherent singleton answer often already exists, so commitment adds only a small coherence gain. \\
+\bottomrule
+\end{tabularx}
+\caption{Cross-dataset contrast between learned top-1 selection and full proposal-space commitment. RWTD and STLD use different evaluators, so the point is not absolute scale but the different role played by singleton selection on the two routes.}
+\label{tab:stld_selector_contrast}
+\end{table*}

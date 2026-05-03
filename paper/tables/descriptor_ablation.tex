@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{0.98}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}llcccccc@{}}
+\toprule
+Benchmark / subset & Output & \multicolumn{2}{c}{Handcrafted-only} & \multicolumn{2}{c}{PTD-only} & \multicolumn{2}{c}{Hybrid} \\
+ &  & mIoU & ARI & mIoU & ARI & mIoU & ARI \\
+\midrule
+RWTD common-253 & Stage-A official & 0.4469 & 0.6556 & 0.4486 & 0.6505 & 0.4558 & 0.6812 \\
+RWTD full-256 & Stage-A official & 0.4454 & 0.6533 & 0.4472 & 0.6484 & 0.4543 & 0.6786 \\
+STLD common-182 & Stage-A direct & 0.7045 & 0.7808 & 0.6698 & 0.7740 & 0.7195 & 0.7791 \\
+STLD all-200 & Stage-A direct & 0.6570 & 0.7265 & 0.6253 & 0.7203 & 0.6705 & 0.7249 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Descriptor ablation for the descriptor-sensitive Stage-A commitment layer, with the proposal bank, evaluator, and model family held fixed. RWTD is reported at Stage-A because the dense rescue layer operates on candidate masks and is unchanged across descriptor variants. Hybrid descriptors are clearly strongest on RWTD, while STLD is less sensitive to the descriptor choice and even slightly favors handcrafted-only on ARI.}
+\label{tab:descriptor_ablation}
+\end{table*}

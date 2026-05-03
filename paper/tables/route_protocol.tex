@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{0.98}
+\begin{tabularx}{\textwidth}{@{}p{0.14\textwidth}p{0.21\textwidth}p{0.24\textwidth}p{0.18\textwidth}X@{}}
+\toprule
+Route & Frozen evidence & Learned readout & Evaluator & Role in paper \\
+\midrule
+Feature probe & multiscale SAM \texttt{backbone\_fpn} features & none; clustering-only probe & available route-specific splits & diagnostic only; appendix evidence for latent structure, not a headline comparison \\
+RWTD & frozen prompt bank plus dense rescue candidates & compatibility, conservative core ranking, rescue switch & official invariant mIoU / ARI on full-256 and common-253 & main natural benchmark and main operational claim \\
+STLD & frozen prompt bank & Stage-A compatibility and component ranking & direct foreground mIoU / ARI on all-200 and common-182 & main synthetic companion benchmark \\
+ControlNet bridge & frozen prompt bank & Stage-A compatibility and component ranking & invariant mIoU / ARI on all-1742 & supporting appendix route only; no causal bridge-training claim \\
+CAID & frozen prompt bank & Stage-A compatibility and component ranking & invariant mIoU / ARI on all-3104 & appendix breadth check only \\
+\bottomrule
+\end{tabularx}
+\caption{Frozen-versus-learned summary of the routes used in the paper. Proposal-space recovery on RWTD and STLD carries the main claim; feature-space evidence is diagnostic only, and the bridge and CAID routes are supporting appendix material.}
+\label{tab:route_protocol}
+\end{table*}

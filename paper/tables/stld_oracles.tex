@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{0.98}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+STLD method & All-200 mIoU & All-200 ARI & Common-182 mIoU & Common-182 ARI \\
+\midrule
+\sys{} final & 0.6705 & 0.7249 & 0.7195 & 0.7791 \\
+Learned single selector & 0.6548 & 0.7036 & 0.7196 & 0.7731 \\
+Single frozen-proposal oracle & 0.7375 & 0.7684 & 0.8105 & 0.8444 \\
+Compatible-component oracle & 0.3950 & 0.3598 & 0.4341 & 0.3953 \\
+Top-$k$ union oracle & 0.1257 & 0.0289 & 0.1381 & 0.0317 \\
+Bank upper bound & 0.7574 & 0.7962 & 0.8149 & 0.8574 \\
+\bottomrule
+\end{tabular}
+\caption{Supporting STLD oracle analysis under the direct-foreground evaluator. The learned top-1 selector already recovers much of the overlap on STLD, but the full system remains slightly stronger on coherence and still trails the bank oracles.}
+\label{tab:stld_oracles}
+\end{table*}

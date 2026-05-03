@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}Xlc@{}}
+\toprule
+Method & Subset / coverage & Invariant mIoU / ARI \\
+\midrule
+TextureSAM public checkpoint rerun & all-3104, 3063/3104 & 0.6691 / 0.5080 \\
+\sys{} Stage-A (ours) & all-3104, 3104/3104 & 0.6677 / 0.5745 \\
+TextureSAM public checkpoint rerun & common-3063 & 0.6780 / 0.5148 \\
+\sys{} Stage-A (ours) & common-3063 & 0.6677 / 0.5745 \\
+\bottomrule
+\end{tabularx}
+\caption{Supporting CAID breadth check under the partition-invariant evaluator. CAID is kept only as an appendix route because its shoreline focus is less central to the paper's texture claim.}
+\label{tab:caid_secondary}
+\end{table*}

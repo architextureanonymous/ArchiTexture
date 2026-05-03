@@ -1,0 +1,30 @@
+\section{Problem Formulation}
+\label{sec:problem}
+
+Let a frozen SAM-style segmenter expose two kinds of evidence for an image $x$: a multiscale feature representation $\phi(x)$ and a proposal bank $\mathcal{P}(x)=\{m_i\}_{i=1}^{N_x}$. The downstream target is a binary texture partition $Y \in \{0,1\}^{H\times W}$. Depending on the benchmark, the foreground side may be canonical (STLD) or label-symmetric (RWTD and the appendix routes), but the output is always one binary partition.
+
+We define \emph{recoverability} as the performance of a readout that must keep the underlying segmenter frozen. The readout may inspect $\phi(x)$, $\mathcal{P}(x)$, or both, but it may not retrain the backbone or alter the proposal generator. This yields two loci:
+\begin{align}
+\hat{Y}_{\mathrm{feat}} &= R_{\mathrm{feat}}(\phi(x)), \\
+\hat{Y}_{\mathrm{prop}} &= R_{\mathrm{prop}}(x, \mathcal{P}(x)).
+\end{align}
+The first readout asks whether texture structure is already latent in frozen features. The second asks whether fragmented proposal evidence can be assembled into a coherent task partition.
+
+For the proposal route, the frozen bank is first encoded proposal-wise as $d_i = E(x, m_i)$. A learned pair model scores potentially adjacent proposals,
+\begin{align}
+s(i,j) = f_{\mathrm{pair}}(\psi(d_i, d_j, m_i, m_j)),
+\end{align}
+and connected components induced by scores above a threshold $\tau$ define candidate merged regions $\mathcal{C}(x)$. A learned component scorer then ranks those candidates,
+\begin{align}
+q(C) = f_{\mathrm{comp}}(g(C; x, \mathcal{P}(x))), \qquad
+C^\star(x) = \arg\max_{C \in \mathcal{C}(x)} q(C).
+\end{align}
+RWTD adds an optional denser rescue bank $\mathcal{P}^{+}(x)$ and a learned switch that decides whether some rescue candidate $R_k \in \mathcal{P}^{+}(x)$ should replace the conservative core $C^\star(x)$.
+
+\paragraph{Representation-level recoverability.} The feature route is intentionally lightweight as an engineered system. It clusters coarse frozen \texttt{backbone\_fpn} features, optionally after pooling or flip-averaging, and then scores the resulting binary partition. Its role is diagnostic: if such a simple probe already succeeds at all, then the backbone is not texture-blind. Because the available RWTD feature artifacts use a 227-image public split rather than the official 256-image proposal-route evaluator, this branch is kept secondary throughout.
+
+\paragraph{Proposal-level recoverability.} The proposal route treats the frozen bank as incomplete evidence. The readout must decide which fragments are mutually compatible, which merged component should be trusted as the conservative core, and, on RWTD only, when a denser completion is worth the risk. This is the main operational setting of the paper. If a learned commitment layer can recover a strong final partition from frozen proposals, then texture failure in the frozen system does not imply texture absence in the bank.
+
+\paragraph{Fair comparison.} Recoverability claims are only meaningful when evaluator and subset conventions are fixed within each block. The main paper therefore uses matched comparisons only: RWTD on the official full-256 evaluator and on the common-253 subset shared with the public TextureSAM rerun, and STLD on the all-200 and common-182 direct-foreground views. The feature probe is not mixed into those tables.
+
+\input{tables/route_protocol}

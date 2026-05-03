@@ -1,0 +1,14 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}Xcc@{}}
+\toprule
+Dense rescue proposal source (frozen) & Full-256 mIoU / ARI & Common-253 mIoU / ARI \\
+\midrule
+Released dense bank & 0.4611 / 0.6966 & 0.4645 / 0.7013 \\
+SAM2.1-large source swap & 0.5003 / 0.7048 & 0.5005 / 0.7106 \\
+\bottomrule
+\end{tabularx}
+\caption{Frozen proposal-source transfer stress test. Consolidation weights and thresholds remain fixed; only the rescue proposal bank changes. This is evidence for modularity of the decision layer, not a standalone benchmark claim.}
+\label{tab:proposal_swap}
+\end{table*}

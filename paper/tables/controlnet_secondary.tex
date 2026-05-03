@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}Xlcc@{}}
+\toprule
+Method & Subset / coverage & Direct mIoU / ARI & Invariant mIoU / ARI \\
+\midrule
+TextureSAM public checkpoint rerun & all-1742, 1739/1742 & 0.4212 / 0.6446 & 0.6425 / 0.5510 \\
+\sys{} Stage-A (ours) & all-1742, 1742/1742 & 0.4993 / 0.6039 & 0.6803 / 0.6039 \\
+TextureSAM public checkpoint rerun & common-1739 & 0.4219 / 0.6457 & 0.6436 / 0.5519 \\
+\sys{} Stage-A (ours) & common-1739 & 0.4993 / 0.6039 & 0.6803 / 0.6039 \\
+\bottomrule
+\end{tabularx}
+\caption{Supporting ControlNet-stitched bridge results. The main paper does not use this route as a central claim because the repository supports clean evaluation but not a causal bridge-training study.}
+\label{tab:controlnet_secondary}
+\end{table*}

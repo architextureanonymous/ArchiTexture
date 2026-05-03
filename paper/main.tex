@@ -1,0 +1,55 @@
+\documentclass{article}
+
+\usepackage{neurips_2023}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage[capitalize,noabbrev]{cleveref}
+
+\newcommand{\sys}{\textsc{ArchiTexture}}
+\newcommand{\featroute}{feature-space recovery}
+\newcommand{\proproute}{proposal-space recovery}
+\newcommand{\submissioncodesentence}{Anonymous code and supplementary materials are provided in the supplementary package.}
+\newcommand{\camerareadycodesentence}{Code available in the anonymous supplement package.}
+\newcommand{\codelinksentence}{\camerareadycodesentence}
+
+\title{ArchiTexture: Recovering Texture Partitions from Frozen SAM via Proposal-Space Commitment}
+\author{Anonymous Authors}
+
+\begin{document}
+
+\maketitle
+
+\input{abstract}
+\input{sections/01_intro}
+\input{sections/02_related_work}
+\input{sections/03_problem_formulation}
+\input{sections/04_feature_space_recovery}
+\input{sections/05_proposal_space_recovery}
+\input{sections/06_datasets_and_protocol}
+\input{sections/07_results}
+\input{sections/08_discussion_limitations}
+\input{sections/09_broader_impact_or_repro}
+
+{\small
+\bibliographystyle{plainnat}
+\bibliography{refs}
+}
+
+\clearpage
+\appendix
+\input{appendix}
+
+\end{document}

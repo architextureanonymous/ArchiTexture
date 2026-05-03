@@ -1,0 +1,109 @@
+\section{Implementation Details and Practicality}
+\label{app:implementation_details}
+
+\input{tables/algorithm_box}
+\input{tables/descriptor_ablation}
+\input{tables/practicality}
+
+\paragraph{Why include this appendix section?} The paper's main claim is scientific rather than systems-oriented, but two reviewer questions still matter: whether the gain depends mainly on a particular descriptor stack, and whether the decision layer is practical enough to deploy above a frozen bank. The tables in this section answer those questions directly. The descriptor ablation keeps the decision stack fixed while varying only the proposal descriptor in the descriptor-sensitive Stage-A layer; on RWTD, hybrid descriptors help clearly more than either single family, while STLD is noticeably less sensitive and sometimes slightly favors handcrafted cues on ARI. The practicality table then summarizes the actual bank sizes, rescue scale, and measured runtime profile of the deployed RWTD and STLD routes.
+
+\section{Feature-Space Diagnostic Evidence}
+\label{app:feature_provenance}
+
+The feature-space branch remains auxiliary. Its repository-backed artifacts come from the coarse-feature clustering bundles, the parity summaries, and the scale-probe study in the \texttt{research-site} tree. The key caveat is short and fixed throughout this appendix: the RWTD feature probe uses a 227-image public split rather than the official 256-image proposal-route evaluator, so this route is reported only as diagnostic evidence for where texture structure can already live inside frozen features.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.98\textwidth]{figures/fig_feature_space_recovery.png}
+    \caption{Archived feature-probe summary from the repository parity bundles. Top: coarse-only and flip-averaged summaries across RWTD, STLD, and CAID. Bottom: representative RWTD holdouts showing that coarse clustering can recover plausible binary partitions while remaining sensitive to positional bias.}
+    \label{fig:feature_summary_app}
+\end{figure*}
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.98\textwidth]{figures/fig_feature_gallery.png}
+    \caption{Curated qualitative gallery for coarse frozen-feature clustering. The gallery spans repeated-pattern scenes, gradual texture transitions, shape-versus-texture cases, and synthetic silhouettes. The annulus example in RWTD-101 is representative of the strongest qualitative evidence: even a frozen coarse probe can recover a topologically nontrivial partition without retraining the backbone.}
+    \label{fig:feature_gallery}
+\end{figure*}
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.98\textwidth]{figures/fig_feature_scale_diagnostics.png}
+    \caption{Archived scale and gating diagnostics from the feature probe. Left: mean ARI by run. Middle: learned all-scale and coarse-plus-mid gate weights still place most mass on the coarsest level. Right: single-scale readouts show that coarse features dominate, while native fine-grid clustering is the weakest control. These runs are diagnostic only and are not evaluated under the official RWTD proposal-route protocol.}
+    \label{fig:feature_scale_diag}
+\end{figure*}
+
+\paragraph{Interpretation.} The appendix diagnostics point in one direction. Coarse frozen features already recover much of the binary partition on the repository-backed probe, learned all-scale fusion still prefers the coarsest level, and the finest native grid is the least reliable setting. That is enough for the paper's narrower use of this route: frozen SAM features can contain texture-aware structure, but the feature probe remains a diagnostic instrument rather than a matched main-paper system.
+
+\input{tables/feature_parity}
+
+\section{RWTD Oracle and Failure Details}
+\label{app:rwtd_diag}
+
+RWTD is where the recoverability claim is most demanding. The proposal bank is strong, but the deployed decision stack still leaves a large oracle gap. \Cref{fig:rwtd_case_gallery} shows four recurring patterns. First, top-1 proposal scoring can miss cases where conservative component commitment succeeds. Second, rescue can repair an under-covered core. Third, a strong singleton can already exist in the bank even when the deployed stack abstains from it. Fourth, the remaining wrong-partition failures are low-margin commitment mistakes rather than proposal-bank misses.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]{figures/fig_rwtd_case_gallery.png}
+    \caption{RWTD case studies across selector, core, final, and oracle views. These examples make the oracle gap concrete: the bank often contains a strong answer, but the deployed stack still needs the right commitment decision to reach it. The rescue layer helps on some under-coverage cases, but low-margin wrong-partition failures remain brittle.}
+    \label{fig:rwtd_case_gallery}
+\end{figure*}
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.92\textwidth]{figures/fig_ambiguity_commitment_full256.png}
+    \caption{RWTD ambiguity-to-failure diagnostics on the full-256 audit. Wrong-partition cases concentrate in the lowest-margin regime, and top-$k$ recoverability remains high exactly where the final decision layer is most brittle.}
+    \label{fig:ambiguity_commitment}
+\end{figure*}
+
+\paragraph{How to read the oracle gap.} The bank upper bound is not a deployable method: it assumes access to the ground-truth partition when choosing among proposals, merged components, and rescue candidates. Its role is diagnostic. On RWTD, the gap between the deployed system and that bound shows that the frozen bank already contains more usable texture evidence than the current decision layer recovers. The learned single-selector baseline narrows only part of that gap, which is why RWTD still needs structured commitment above fragmented proposals.
+
+\input{tables/rwtd_audit}
+\input{tables/proposal_swap}
+\input{tables/bootstrap_support}
+\input{tables/compact_repro}
+
+\section{STLD Supporting Oracle Analysis}
+\label{app:stld_support}
+
+STLD plays a different supporting role. The oracle analysis still shows extra headroom in the bank, but the learned top-1 selector is already close to the full system on the common-182 subset. In practice, many STLD images contain a coherent singleton answer, so the main remaining gain is modest coherence cleanup rather than large-scale fragment commitment.
+
+\input{tables/stld_selector_contrast}
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.96\textwidth]{figures/fig_stld_case_gallery.png}
+    \caption{Representative STLD cases. Most examples already have a coherent singleton proposal, so the learned selector, final deployment, and single-proposal oracle are nearly indistinguishable. The last row shows a useful counterexample where the selector slightly outruns the final decision.}
+    \label{fig:stld_case_gallery}
+\end{figure*}
+
+\input{tables/stld_oracles}
+
+\section{Supporting Routes}
+\label{app:route_secondary}
+
+The remaining routes stay secondary by design. The ControlNet-stitched bridge benchmark preserves exact supervision while introducing more naturalistic transitions than hard mosaics, but this paper does not claim a causal bridge-training benefit. CAID is kept only as a breadth check under domain shift.
+
+\subsection{ControlNet Bridge Examples}
+\label{app:bridge_secondary}
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.92\textwidth]{figures/fig_controlnet_bridge_examples.png}
+    \caption{ControlNet-stitched bridge examples. The proposal-union view often leaks across the stitched transition or over-broadens the generator boundary, which explains why overlap can look reasonable while ARI remains fragile. The Stage-A route is more conservative, but we keep this benchmark in the appendix because the paper does not establish a causal bridge-training advantage.}
+    \label{fig:controlnet_bridge_app}
+\end{figure*}
+
+\input{tables/controlnet_secondary}
+
+\subsection{CAID Breadth Check}
+\label{app:caid_secondary}
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.98\textwidth]{figures/fig_caid_audit.png}
+    \caption{CAID breadth-check example. The same frozen-bank consolidation logic remains useful under shoreline structure, but this route is not central to the paper's texture claim and is reported only as an appendix-side generalization check.}
+    \label{fig:caid_app}
+\end{figure*}
+
+\input{tables/caid_secondary}

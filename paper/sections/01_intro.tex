@@ -1,0 +1,21 @@
+\section{Introduction}
+\label{sec:intro}
+
+Texture partitioning is not just semantic segmentation with unusual labels. The target regions are often defined by repeated local structure, appearance statistics, and transition behavior rather than by named object categories. RWTD and STLD make that distinction explicit, and they also expose the practical bottleneck: texture boundaries can be weak, disconnected, or globally ambiguous even when local evidence is strong~\cite{khan2015stld,khan2017c2f,khan2018learnedstld,mikes2022texturebenchmark}. SAM-style foundation segmenters add a new failure mode on top of that difficulty. They often emit many plausible masks on the same image, yet still fail to commit to the texture partition that matters for the task~\cite{kirillov2023sam,ravi2024sam2}.
+
+That failure is easy to misread. If a frozen SAM system misses the final texture partition, the default response is to assume that the backbone itself must be specialized for texture. TextureSAM is the strongest current example of that strategy on the RWTD/STLD benchmark family~\cite{cohen2025texturesam,cohen2026texturesam}. Our starting point is different. Fragmented masks suggest that the relevant evidence may already be present inside the frozen system and that the missing step is not always feature invention. It may instead be \emph{recoverability}: whether the final texture partition can be recovered from frozen evidence.
+
+This paper asks where recoverable texture structure already lives inside a frozen SAM-style system. There are two natural loci. One is feature space: coarse frozen features may already contain texture partition structure. The other is proposal space: the frozen mask bank may already contain the right fragments, but the system may fail to assemble them into a coherent partition. The two loci play different roles here. Proposal-space recovery is the operational core of the paper. Feature-space recovery remains a diagnostic probe that explains why recoverability is plausible in the first place.
+
+\input{figures/fig_recoverability_loci}
+
+This framing separates two questions that are often conflated. One question is whether frozen foundation segmenters contain texture evidence at all. The other is whether that evidence has already been organized into the correct final partition. Our main empirical claim concerns the second question. \sys{} keeps the proposal generator frozen and learns the commitment layer above it: which fragments are compatible, which merged component should be trusted as a conservative core, and on RWTD only, when a denser rescue candidate is worth the risk. Under matched evaluation, this proposal-space route improves RWTD coherence from 0.6163 to 0.7013 ARI on the common-253 comparison against TextureSAM while maintaining comparable mIoU, and it improves STLD from 0.5140/0.7526 to 0.7195/0.7791 on the common-182 direct evaluator.
+
+The paper is therefore not a claim that backbone specialization is unnecessary. It is a narrower claim that frozen SAM systems often contain more texture evidence than their final outputs reveal. On RWTD, for example, the frozen bank upper bound reaches 0.5183 mIoU / 0.8580 ARI on the common-253 subset, well above the deployed system. That gap is exactly what makes proposal-space recoverability scientifically meaningful.
+
+\paragraph{Contributions.} The paper makes three focused contributions.
+\begin{itemize}[leftmargin=1.2em]
+\item We formulate texture segmentation in frozen SAM-style systems as a recoverability problem and make proposal-space commitment above a frozen proposal bank the paper's primary operational contribution.
+\item We show, on matched RWTD and STLD evaluations, that learned commitment above a frozen bank recovers substantial task value and that generic bank-only heuristics are not enough.
+\item We add oracle decompositions showing that the frozen bank is richer than the deployed decision layer, while keeping the feature-space branch only as a constrained diagnostic probe rather than as a competing main comparison.
+\end{itemize}

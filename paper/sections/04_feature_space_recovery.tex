@@ -1,0 +1,8 @@
+\section{Feature-Space Recovery}
+\label{sec:feature}
+
+The feature-space branch asks the narrower question first: if SAM is kept frozen, does texture partition structure already exist in the representation at all? The repository contains a probe based on clustering pooled coarsest \texttt{backbone\_fpn} features, with coarse-only and flip-averaged variants and documented positional-debiasing controls. That probe matters scientifically because it is the simplest possible readout: no decoder is trained, and the backbone remains untouched.
+
+We treat that route conservatively. The available RWTD feature probe is evaluated on a 227-image public split, not on the official 256-image evaluator used by the proposal route, and we did not recover a matched rerun script that would make the comparison fully protocol-aligned. We therefore do \emph{not} use feature-space numbers as a main comparison in the paper. Appendix~\ref{app:feature_provenance} reports the repository-backed parity summary, a curated qualitative gallery, and scale-weighting diagnostics only to support a modest claim: coarse frozen features appear to contain nontrivial texture structure, and the probe is sensitive to positional debiasing such as flip-averaging.
+
+That asymmetry is deliberate. The paper does not need the feature route to win a leaderboard. It only needs the feature route to motivate why recoverability above a frozen system is plausible. The main empirical burden is carried instead by matched proposal-space evaluation.

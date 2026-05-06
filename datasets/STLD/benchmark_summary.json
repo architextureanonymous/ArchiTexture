@@ -1,0 +1,1817 @@
+{
+  "out_root": "<REDACTED_PATH>",
+  "textures_root": "<REDACTED_PATH>",
+  "shape_root": "<REDACTED_PATH>",
+  "num_images": 200,
+  "image_size": 256,
+  "seed": 1337,
+  "class_count": 13,
+  "shape_count": 287,
+  "shape_min_area_ratio": 0.08,
+  "shape_max_area_ratio": 0.55,
+  "foreground_area_ratio_mean": 0.15250579833984376,
+  "foreground_area_ratio_min": 0.0093536376953125,
+  "foreground_area_ratio_max": 0.426788330078125,
+  "rows": [
+    {
+      "image_id": 1,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_12",
+      "background_source": "1.1.07.tiff",
+      "foreground_source": "1.2.12.tiff",
+      "shape_file": "stef-18.gif",
+      "foreground_area_ratio": 0.0975189208984375
+    },
+    {
+      "image_id": 2,
+      "background_class": "brodatz_01",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.3.01.tiff",
+      "foreground_source": "1.1.11.tiff",
+      "shape_file": "pencil-4.gif",
+      "foreground_area_ratio": 0.0931854248046875
+    },
+    {
+      "image_id": 3,
+      "background_class": "brodatz_03",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.2.03.tiff",
+      "foreground_source": "1.1.07.tiff",
+      "shape_file": "device3-18.gif",
+      "foreground_area_ratio": 0.244903564453125
+    },
+    {
+      "image_id": 4,
+      "background_class": "brodatz_08",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.2.08.tiff",
+      "foreground_source": "1.3.03.tiff",
+      "shape_file": "bell-20.gif",
+      "foreground_area_ratio": 0.0838623046875
+    },
+    {
+      "image_id": 5,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.1.06.tiff",
+      "foreground_source": "1.3.03.tiff",
+      "shape_file": "key-7.gif",
+      "foreground_area_ratio": 0.1831817626953125
+    },
+    {
+      "image_id": 6,
+      "background_class": "brodatz_11",
+      "foreground_class": "brodatz_02",
+      "background_source": "1.1.11.tiff",
+      "foreground_source": "1.1.02.tiff",
+      "shape_file": "device2-20.gif",
+      "foreground_area_ratio": 0.2787628173828125
+    },
+    {
+      "image_id": 7,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_13",
+      "background_source": "1.1.09.tiff",
+      "foreground_source": "1.1.13.tiff",
+      "shape_file": "Misk-14.gif",
+      "foreground_area_ratio": 0.0860443115234375
+    },
+    {
+      "image_id": 8,
+      "background_class": "brodatz_10",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.1.10.tiff",
+      "foreground_source": "1.2.07.tiff",
+      "shape_file": "device5-6.gif",
+      "foreground_area_ratio": 0.098876953125
+    },
+    {
+      "image_id": 9,
+      "background_class": "brodatz_01",
+      "foreground_class": "brodatz_02",
+      "background_source": "1.3.01.tiff",
+      "foreground_source": "1.2.02.tiff",
+      "shape_file": "device4-18.gif",
+      "foreground_area_ratio": 0.287017822265625
+    },
+    {
+      "image_id": 10,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_08",
+      "background_source": "1.2.06.tiff",
+      "foreground_source": "1.2.08.tiff",
+      "shape_file": "cattle-6.gif",
+      "foreground_area_ratio": 0.128326416015625
+    },
+    {
+      "image_id": 11,
+      "background_class": "brodatz_05",
+      "foreground_class": "brodatz_12",
+      "background_source": "1.2.05.tiff",
+      "foreground_source": "1.2.12.tiff",
+      "shape_file": "chicken-4.gif",
+      "foreground_area_ratio": 0.2836456298828125
+    },
+    {
+      "image_id": 12,
+      "background_class": "brodatz_03",
+      "foreground_class": "brodatz_02",
+      "background_source": "1.2.03.tiff",
+      "foreground_source": "1.3.02.tiff",
+      "shape_file": "dog-4.gif",
+      "foreground_area_ratio": 0.0941314697265625
+    },
+    {
+      "image_id": 13,
+      "background_class": "brodatz_11",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.2.11.tiff",
+      "foreground_source": "1.3.01.tiff",
+      "shape_file": "shoe-8.gif",
+      "foreground_area_ratio": 0.1188812255859375
+    },
+    {
+      "image_id": 14,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.2.06.tiff",
+      "foreground_source": "1.2.11.tiff",
+      "shape_file": "device3-13.gif",
+      "foreground_area_ratio": 0.11175537109375
+    },
+    {
+      "image_id": 15,
+      "background_class": "brodatz_10",
+      "foreground_class": "brodatz_02",
+      "background_source": "1.3.10.tiff",
+      "foreground_source": "1.2.02.tiff",
+      "shape_file": "frog-9.gif",
+      "foreground_area_ratio": 0.245208740234375
+    },
+    {
+      "image_id": 16,
+      "background_class": "brodatz_10",
+      "foreground_class": "brodatz_05",
+      "background_source": "1.2.10.tiff",
+      "foreground_source": "1.2.05.tiff",
+      "shape_file": "cellular_phone-18.gif",
+      "foreground_area_ratio": 0.1651458740234375
+    },
+    {
+      "image_id": 17,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_06",
+      "background_source": "1.2.07.tiff",
+      "foreground_source": "1.2.06.tiff",
+      "shape_file": "hammer-20.gif",
+      "foreground_area_ratio": 0.090087890625
+    },
+    {
+      "image_id": 18,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.2.06.tiff",
+      "foreground_source": "1.3.11.tiff",
+      "shape_file": "crown-17.gif",
+      "foreground_area_ratio": 0.14373779296875
+    },
+    {
+      "image_id": 19,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_02",
+      "background_source": "1.2.09.tiff",
+      "foreground_source": "1.1.02.tiff",
+      "shape_file": "device4-1.gif",
+      "foreground_area_ratio": 0.1842193603515625
+    },
+    {
+      "image_id": 20,
+      "background_class": "brodatz_03",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.3.03.tiff",
+      "foreground_source": "1.2.11.tiff",
+      "shape_file": "device5-14.gif",
+      "foreground_area_ratio": 0.1293792724609375
+    },
+    {
+      "image_id": 21,
+      "background_class": "brodatz_10",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.2.10.tiff",
+      "foreground_source": "1.1.11.tiff",
+      "shape_file": "device4-1.gif",
+      "foreground_area_ratio": 0.2159881591796875
+    },
+    {
+      "image_id": 22,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_05",
+      "background_source": "1.1.07.tiff",
+      "foreground_source": "1.2.05.tiff",
+      "shape_file": "hammer-16.gif",
+      "foreground_area_ratio": 0.0834808349609375
+    },
+    {
+      "image_id": 23,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.1.07.tiff",
+      "foreground_source": "1.3.01.tiff",
+      "shape_file": "key-2.gif",
+      "foreground_area_ratio": 0.2502593994140625
+    },
+    {
+      "image_id": 24,
+      "background_class": "brodatz_08",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.2.08.tiff",
+      "foreground_source": "1.1.07.tiff",
+      "shape_file": "horse-19.gif",
+      "foreground_area_ratio": 0.1815185546875
+    },
+    {
+      "image_id": 25,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.1.12.tiff",
+      "foreground_source": "1.1.07.tiff",
+      "shape_file": "cup-19.gif",
+      "foreground_area_ratio": 0.3756103515625
+    },
+    {
+      "image_id": 26,
+      "background_class": "brodatz_13",
+      "foreground_class": "brodatz_08",
+      "background_source": "1.1.13.tiff",
+      "foreground_source": "1.3.08.tiff",
+      "shape_file": "children-10.gif",
+      "foreground_area_ratio": 0.147369384765625
+    },
+    {
+      "image_id": 27,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_09",
+      "background_source": "1.1.07.tiff",
+      "foreground_source": "1.3.09.tiff",
+      "shape_file": "bottle-20.gif",
+      "foreground_area_ratio": 0.1251220703125
+    },
+    {
+      "image_id": 28,
+      "background_class": "brodatz_08",
+      "foreground_class": "brodatz_10",
+      "background_source": "1.1.08.tiff",
+      "foreground_source": "1.1.10.tiff",
+      "shape_file": "bell-12.gif",
+      "foreground_area_ratio": 0.0854034423828125
+    },
+    {
+      "image_id": 29,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_12",
+      "background_source": "1.1.09.tiff",
+      "foreground_source": "1.3.12.tiff",
+      "shape_file": "lizzard-14.gif",
+      "foreground_area_ratio": 0.1446075439453125
+    },
+    {
+      "image_id": 30,
+      "background_class": "brodatz_11",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.2.11.tiff",
+      "foreground_source": "1.3.07.tiff",
+      "shape_file": "rat-08.gif",
+      "foreground_area_ratio": 0.126068115234375
+    },
+    {
+      "image_id": 31,
+      "background_class": "brodatz_11",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.3.11.tiff",
+      "foreground_source": "1.2.03.tiff",
+      "shape_file": "fountain-18.gif",
+      "foreground_area_ratio": 0.27178955078125
+    },
+    {
+      "image_id": 32,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.3.09.tiff",
+      "foreground_source": "1.2.04.tiff",
+      "shape_file": "rat-03.gif",
+      "foreground_area_ratio": 0.1894073486328125
+    },
+    {
+      "image_id": 33,
+      "background_class": "brodatz_08",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.2.08.tiff",
+      "foreground_source": "1.2.04.tiff",
+      "shape_file": "hammer-18.gif",
+      "foreground_area_ratio": 0.1348419189453125
+    },
+    {
+      "image_id": 34,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.3.12.tiff",
+      "foreground_source": "1.2.07.tiff",
+      "shape_file": "crown-17.gif",
+      "foreground_area_ratio": 0.1283721923828125
+    },
+    {
+      "image_id": 35,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.3.07.tiff",
+      "foreground_source": "1.1.01.tiff",
+      "shape_file": "cellular_phone-6.gif",
+      "foreground_area_ratio": 0.2762451171875
+    },
+    {
+      "image_id": 36,
+      "background_class": "brodatz_04",
+      "foreground_class": "brodatz_13",
+      "background_source": "1.3.04.tiff",
+      "foreground_source": "1.2.13.tiff",
+      "shape_file": "Glas-8.gif",
+      "foreground_area_ratio": 0.1269378662109375
+    },
+    {
+      "image_id": 37,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.1.02.tiff",
+      "foreground_source": "1.2.04.tiff",
+      "shape_file": "bat-7.gif",
+      "foreground_area_ratio": 0.099212646484375
+    },
+    {
+      "image_id": 38,
+      "background_class": "brodatz_03",
+      "foreground_class": "brodatz_05",
+      "background_source": "1.2.03.tiff",
+      "foreground_source": "1.3.05.tiff",
+      "shape_file": "elephant-5.gif",
+      "foreground_area_ratio": 0.1180877685546875
+    },
+    {
+      "image_id": 39,
+      "background_class": "brodatz_11",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.3.11.tiff",
+      "foreground_source": "1.3.04.tiff",
+      "shape_file": "device2-3.gif",
+      "foreground_area_ratio": 0.3203887939453125
+    },
+    {
+      "image_id": 40,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_05",
+      "background_source": "1.1.07.tiff",
+      "foreground_source": "1.3.05.tiff",
+      "shape_file": "cattle-8.gif",
+      "foreground_area_ratio": 0.104736328125
+    },
+    {
+      "image_id": 41,
+      "background_class": "brodatz_11",
+      "foreground_class": "brodatz_06",
+      "background_source": "1.1.11.tiff",
+      "foreground_source": "1.3.06.tiff",
+      "shape_file": "pencil-11.gif",
+      "foreground_area_ratio": 0.021697998046875
+    },
+    {
+      "image_id": 42,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_06",
+      "background_source": "1.2.07.tiff",
+      "foreground_source": "1.1.06.tiff",
+      "shape_file": "stef-10.gif",
+      "foreground_area_ratio": 0.1067962646484375
+    },
+    {
+      "image_id": 43,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.3.02.tiff",
+      "foreground_source": "1.2.01.tiff",
+      "shape_file": "flatfish-16.gif",
+      "foreground_area_ratio": 0.0879058837890625
+    },
+    {
+      "image_id": 44,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_02",
+      "background_source": "1.3.09.tiff",
+      "foreground_source": "1.2.02.tiff",
+      "shape_file": "horseshoe-3.gif",
+      "foreground_area_ratio": 0.1350250244140625
+    },
+    {
+      "image_id": 45,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_09",
+      "background_source": "1.2.07.tiff",
+      "foreground_source": "1.1.09.tiff",
+      "shape_file": "bell-12.gif",
+      "foreground_area_ratio": 0.08184814453125
+    },
+    {
+      "image_id": 46,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_10",
+      "background_source": "1.3.06.tiff",
+      "foreground_source": "1.2.10.tiff",
+      "shape_file": "bat-3.gif",
+      "foreground_area_ratio": 0.108978271484375
+    },
+    {
+      "image_id": 47,
+      "background_class": "brodatz_13",
+      "foreground_class": "brodatz_02",
+      "background_source": "1.3.13.tiff",
+      "foreground_source": "1.3.02.tiff",
+      "shape_file": "pencil-4.gif",
+      "foreground_area_ratio": 0.092254638671875
+    },
+    {
+      "image_id": 48,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.1.06.tiff",
+      "foreground_source": "1.2.01.tiff",
+      "shape_file": "bird-19.gif",
+      "foreground_area_ratio": 0.107666015625
+    },
+    {
+      "image_id": 49,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.2.06.tiff",
+      "foreground_source": "1.1.11.tiff",
+      "shape_file": "spoon-8.gif",
+      "foreground_area_ratio": 0.10821533203125
+    },
+    {
+      "image_id": 50,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_12",
+      "background_source": "1.3.06.tiff",
+      "foreground_source": "1.3.12.tiff",
+      "shape_file": "fish-15.gif",
+      "foreground_area_ratio": 0.0342559814453125
+    },
+    {
+      "image_id": 51,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.3.09.tiff",
+      "foreground_source": "1.1.11.tiff",
+      "shape_file": "bat-3.gif",
+      "foreground_area_ratio": 0.1282196044921875
+    },
+    {
+      "image_id": 52,
+      "background_class": "brodatz_03",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.1.03.tiff",
+      "foreground_source": "1.3.04.tiff",
+      "shape_file": "Bone-17.gif",
+      "foreground_area_ratio": 0.0910186767578125
+    },
+    {
+      "image_id": 53,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_12",
+      "background_source": "1.1.02.tiff",
+      "foreground_source": "1.2.12.tiff",
+      "shape_file": "device0-12.gif",
+      "foreground_area_ratio": 0.263153076171875
+    },
+    {
+      "image_id": 54,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_05",
+      "background_source": "1.2.02.tiff",
+      "foreground_source": "1.1.05.tiff",
+      "shape_file": "horse-17.gif",
+      "foreground_area_ratio": 0.0832366943359375
+    },
+    {
+      "image_id": 55,
+      "background_class": "brodatz_05",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.3.05.tiff",
+      "foreground_source": "1.2.01.tiff",
+      "shape_file": "spoon-17.gif",
+      "foreground_area_ratio": 0.107025146484375
+    },
+    {
+      "image_id": 56,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_02",
+      "background_source": "1.3.09.tiff",
+      "foreground_source": "1.1.02.tiff",
+      "shape_file": "lizzard-15.gif",
+      "foreground_area_ratio": 0.08636474609375
+    },
+    {
+      "image_id": 57,
+      "background_class": "brodatz_05",
+      "foreground_class": "brodatz_02",
+      "background_source": "1.2.05.tiff",
+      "foreground_source": "1.1.02.tiff",
+      "shape_file": "fountain-17.gif",
+      "foreground_area_ratio": 0.1857452392578125
+    },
+    {
+      "image_id": 58,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.2.06.tiff",
+      "foreground_source": "1.3.07.tiff",
+      "shape_file": "spring-12.gif",
+      "foreground_area_ratio": 0.052093505859375
+    },
+    {
+      "image_id": 59,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_05",
+      "background_source": "1.1.02.tiff",
+      "foreground_source": "1.2.05.tiff",
+      "shape_file": "elephant-14.gif",
+      "foreground_area_ratio": 0.1848297119140625
+    },
+    {
+      "image_id": 60,
+      "background_class": "brodatz_10",
+      "foreground_class": "brodatz_05",
+      "background_source": "1.1.10.tiff",
+      "foreground_source": "1.3.05.tiff",
+      "shape_file": "rat-02.gif",
+      "foreground_area_ratio": 0.2179718017578125
+    },
+    {
+      "image_id": 61,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.2.02.tiff",
+      "foreground_source": "1.2.03.tiff",
+      "shape_file": "spoon-8.gif",
+      "foreground_area_ratio": 0.0917205810546875
+    },
+    {
+      "image_id": 62,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.2.02.tiff",
+      "foreground_source": "1.1.07.tiff",
+      "shape_file": "hammer-19.gif",
+      "foreground_area_ratio": 0.1004791259765625
+    },
+    {
+      "image_id": 63,
+      "background_class": "brodatz_13",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.2.13.tiff",
+      "foreground_source": "1.2.07.tiff",
+      "shape_file": "bat-13.gif",
+      "foreground_area_ratio": 0.1135101318359375
+    },
+    {
+      "image_id": 64,
+      "background_class": "brodatz_04",
+      "foreground_class": "brodatz_05",
+      "background_source": "1.1.04.tiff",
+      "foreground_source": "1.2.05.tiff",
+      "shape_file": "ray-4.gif",
+      "foreground_area_ratio": 0.2114410400390625
+    },
+    {
+      "image_id": 65,
+      "background_class": "brodatz_05",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.2.05.tiff",
+      "foreground_source": "1.3.01.tiff",
+      "shape_file": "rat-08.gif",
+      "foreground_area_ratio": 0.1343536376953125
+    },
+    {
+      "image_id": 66,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_02",
+      "background_source": "1.2.06.tiff",
+      "foreground_source": "1.3.02.tiff",
+      "shape_file": "classic-9.gif",
+      "foreground_area_ratio": 0.0859375
+    },
+    {
+      "image_id": 67,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.2.12.tiff",
+      "foreground_source": "1.3.11.tiff",
+      "shape_file": "watch-3.gif",
+      "foreground_area_ratio": 0.1162872314453125
+    },
+    {
+      "image_id": 68,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_12",
+      "background_source": "1.2.02.tiff",
+      "foreground_source": "1.2.12.tiff",
+      "shape_file": "stef-18.gif",
+      "foreground_area_ratio": 0.080078125
+    },
+    {
+      "image_id": 69,
+      "background_class": "brodatz_05",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.3.05.tiff",
+      "foreground_source": "1.3.01.tiff",
+      "shape_file": "fish-10.gif",
+      "foreground_area_ratio": 0.094390869140625
+    },
+    {
+      "image_id": 70,
+      "background_class": "brodatz_08",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.1.08.tiff",
+      "foreground_source": "1.3.11.tiff",
+      "shape_file": "device8-1.gif",
+      "foreground_area_ratio": 0.1588134765625
+    },
+    {
+      "image_id": 71,
+      "background_class": "brodatz_01",
+      "foreground_class": "brodatz_02",
+      "background_source": "1.3.01.tiff",
+      "foreground_source": "1.3.02.tiff",
+      "shape_file": "shoe-17.gif",
+      "foreground_area_ratio": 0.1836395263671875
+    },
+    {
+      "image_id": 72,
+      "background_class": "brodatz_11",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.2.11.tiff",
+      "foreground_source": "1.2.01.tiff",
+      "shape_file": "teddy-06.gif",
+      "foreground_area_ratio": 0.0846099853515625
+    },
+    {
+      "image_id": 73,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.1.07.tiff",
+      "foreground_source": "1.2.03.tiff",
+      "shape_file": "Glas-16.gif",
+      "foreground_area_ratio": 0.15087890625
+    },
+    {
+      "image_id": 74,
+      "background_class": "brodatz_01",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.3.01.tiff",
+      "foreground_source": "1.2.03.tiff",
+      "shape_file": "chopper-15.gif",
+      "foreground_area_ratio": 0.102874755859375
+    },
+    {
+      "image_id": 75,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_05",
+      "background_source": "1.2.02.tiff",
+      "foreground_source": "1.3.05.tiff",
+      "shape_file": "device4-1.gif",
+      "foreground_area_ratio": 0.1975860595703125
+    },
+    {
+      "image_id": 76,
+      "background_class": "brodatz_05",
+      "foreground_class": "brodatz_09",
+      "background_source": "1.3.05.tiff",
+      "foreground_source": "1.2.09.tiff",
+      "shape_file": "guitar-3.gif",
+      "foreground_area_ratio": 0.081329345703125
+    },
+    {
+      "image_id": 77,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_06",
+      "background_source": "1.2.07.tiff",
+      "foreground_source": "1.3.06.tiff",
+      "shape_file": "lizzard-6.gif",
+      "foreground_area_ratio": 0.0975189208984375
+    },
+    {
+      "image_id": 78,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.3.02.tiff",
+      "foreground_source": "1.2.11.tiff",
+      "shape_file": "device9-14.gif",
+      "foreground_area_ratio": 0.1786651611328125
+    },
+    {
+      "image_id": 79,
+      "background_class": "brodatz_03",
+      "foreground_class": "brodatz_05",
+      "background_source": "1.1.03.tiff",
+      "foreground_source": "1.1.05.tiff",
+      "shape_file": "device5-6.gif",
+      "foreground_area_ratio": 0.150360107421875
+    },
+    {
+      "image_id": 80,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_08",
+      "background_source": "1.2.07.tiff",
+      "foreground_source": "1.2.08.tiff",
+      "shape_file": "bottle-06.gif",
+      "foreground_area_ratio": 0.1012725830078125
+    },
+    {
+      "image_id": 81,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.3.12.tiff",
+      "foreground_source": "1.1.01.tiff",
+      "shape_file": "teddy-18.gif",
+      "foreground_area_ratio": 0.190643310546875
+    },
+    {
+      "image_id": 82,
+      "background_class": "brodatz_03",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.3.03.tiff",
+      "foreground_source": "1.2.01.tiff",
+      "shape_file": "sea_snake-5.gif",
+      "foreground_area_ratio": 0.152435302734375
+    },
+    {
+      "image_id": 83,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.2.12.tiff",
+      "foreground_source": "1.3.07.tiff",
+      "shape_file": "chicken-10.gif",
+      "foreground_area_ratio": 0.1697845458984375
+    },
+    {
+      "image_id": 84,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_12",
+      "background_source": "1.1.09.tiff",
+      "foreground_source": "1.2.12.tiff",
+      "shape_file": "hammer-10.gif",
+      "foreground_area_ratio": 0.105987548828125
+    },
+    {
+      "image_id": 85,
+      "background_class": "brodatz_04",
+      "foreground_class": "brodatz_08",
+      "background_source": "1.3.04.tiff",
+      "foreground_source": "1.3.08.tiff",
+      "shape_file": "frog-8.gif",
+      "foreground_area_ratio": 0.1311492919921875
+    },
+    {
+      "image_id": 86,
+      "background_class": "brodatz_10",
+      "foreground_class": "brodatz_13",
+      "background_source": "1.2.10.tiff",
+      "foreground_source": "1.1.13.tiff",
+      "shape_file": "horse-11.gif",
+      "foreground_area_ratio": 0.120819091796875
+    },
+    {
+      "image_id": 87,
+      "background_class": "brodatz_13",
+      "foreground_class": "brodatz_10",
+      "background_source": "1.2.13.tiff",
+      "foreground_source": "1.2.10.tiff",
+      "shape_file": "spoon-17.gif",
+      "foreground_area_ratio": 0.0933685302734375
+    },
+    {
+      "image_id": 88,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_12",
+      "background_source": "1.2.02.tiff",
+      "foreground_source": "1.1.12.tiff",
+      "shape_file": "cattle-1.gif",
+      "foreground_area_ratio": 0.1290740966796875
+    },
+    {
+      "image_id": 89,
+      "background_class": "brodatz_05",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.3.05.tiff",
+      "foreground_source": "1.2.01.tiff",
+      "shape_file": "Heart-7.gif",
+      "foreground_area_ratio": 0.10003662109375
+    },
+    {
+      "image_id": 90,
+      "background_class": "brodatz_05",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.3.05.tiff",
+      "foreground_source": "1.1.04.tiff",
+      "shape_file": "cup-5.gif",
+      "foreground_area_ratio": 0.17449951171875
+    },
+    {
+      "image_id": 91,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_10",
+      "background_source": "1.1.09.tiff",
+      "foreground_source": "1.2.10.tiff",
+      "shape_file": "Bone-8.gif",
+      "foreground_area_ratio": 0.0846405029296875
+    },
+    {
+      "image_id": 92,
+      "background_class": "brodatz_05",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.3.05.tiff",
+      "foreground_source": "1.3.11.tiff",
+      "shape_file": "elephant-18.gif",
+      "foreground_area_ratio": 0.1136322021484375
+    },
+    {
+      "image_id": 93,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_06",
+      "background_source": "1.3.09.tiff",
+      "foreground_source": "1.1.06.tiff",
+      "shape_file": "device3-14.gif",
+      "foreground_area_ratio": 0.2129058837890625
+    },
+    {
+      "image_id": 94,
+      "background_class": "brodatz_13",
+      "foreground_class": "brodatz_06",
+      "background_source": "1.1.13.tiff",
+      "foreground_source": "1.2.06.tiff",
+      "shape_file": "hammer-20.gif",
+      "foreground_area_ratio": 0.104156494140625
+    },
+    {
+      "image_id": 95,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.3.09.tiff",
+      "foreground_source": "1.2.03.tiff",
+      "shape_file": "bell-12.gif",
+      "foreground_area_ratio": 0.1086578369140625
+    },
+    {
+      "image_id": 96,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.3.12.tiff",
+      "foreground_source": "1.2.04.tiff",
+      "shape_file": "rat-13.gif",
+      "foreground_area_ratio": 0.156768798828125
+    },
+    {
+      "image_id": 97,
+      "background_class": "brodatz_11",
+      "foreground_class": "brodatz_10",
+      "background_source": "1.2.11.tiff",
+      "foreground_source": "1.3.10.tiff",
+      "shape_file": "cup-6.gif",
+      "foreground_area_ratio": 0.2760772705078125
+    },
+    {
+      "image_id": 98,
+      "background_class": "brodatz_11",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.1.11.tiff",
+      "foreground_source": "1.1.04.tiff",
+      "shape_file": "bell-15.gif",
+      "foreground_area_ratio": 0.1285400390625
+    },
+    {
+      "image_id": 99,
+      "background_class": "brodatz_08",
+      "foreground_class": "brodatz_02",
+      "background_source": "1.1.08.tiff",
+      "foreground_source": "1.3.02.tiff",
+      "shape_file": "chicken-11.gif",
+      "foreground_area_ratio": 0.233642578125
+    },
+    {
+      "image_id": 100,
+      "background_class": "brodatz_10",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.1.10.tiff",
+      "foreground_source": "1.2.04.tiff",
+      "shape_file": "device3-13.gif",
+      "foreground_area_ratio": 0.102691650390625
+    },
+    {
+      "image_id": 101,
+      "background_class": "brodatz_13",
+      "foreground_class": "brodatz_05",
+      "background_source": "1.1.13.tiff",
+      "foreground_source": "1.1.05.tiff",
+      "shape_file": "fly-18.gif",
+      "foreground_area_ratio": 0.110015869140625
+    },
+    {
+      "image_id": 102,
+      "background_class": "brodatz_08",
+      "foreground_class": "brodatz_13",
+      "background_source": "1.2.08.tiff",
+      "foreground_source": "1.1.13.tiff",
+      "shape_file": "bottle-20.gif",
+      "foreground_area_ratio": 0.1953887939453125
+    },
+    {
+      "image_id": 103,
+      "background_class": "brodatz_13",
+      "foreground_class": "brodatz_12",
+      "background_source": "1.2.13.tiff",
+      "foreground_source": "1.2.12.tiff",
+      "shape_file": "device0-10.gif",
+      "foreground_area_ratio": 0.12603759765625
+    },
+    {
+      "image_id": 104,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_02",
+      "background_source": "1.2.07.tiff",
+      "foreground_source": "1.1.02.tiff",
+      "shape_file": "dog-6.gif",
+      "foreground_area_ratio": 0.123626708984375
+    },
+    {
+      "image_id": 105,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.3.06.tiff",
+      "foreground_source": "1.3.01.tiff",
+      "shape_file": "shoe-2.gif",
+      "foreground_area_ratio": 0.1539154052734375
+    },
+    {
+      "image_id": 106,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.1.12.tiff",
+      "foreground_source": "1.1.01.tiff",
+      "shape_file": "device0-2.gif",
+      "foreground_area_ratio": 0.2054901123046875
+    },
+    {
+      "image_id": 107,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.2.12.tiff",
+      "foreground_source": "1.1.03.tiff",
+      "shape_file": "guitar-3.gif",
+      "foreground_area_ratio": 0.0103607177734375
+    },
+    {
+      "image_id": 108,
+      "background_class": "brodatz_11",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.2.11.tiff",
+      "foreground_source": "1.3.03.tiff",
+      "shape_file": "sea_snake-19.gif",
+      "foreground_area_ratio": 0.1063232421875
+    },
+    {
+      "image_id": 109,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.1.06.tiff",
+      "foreground_source": "1.3.07.tiff",
+      "shape_file": "horseshoe-4.gif",
+      "foreground_area_ratio": 0.2357940673828125
+    },
+    {
+      "image_id": 110,
+      "background_class": "brodatz_13",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.3.13.tiff",
+      "foreground_source": "1.2.11.tiff",
+      "shape_file": "guitar-6.gif",
+      "foreground_area_ratio": 0.08123779296875
+    },
+    {
+      "image_id": 111,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.1.09.tiff",
+      "foreground_source": "1.3.07.tiff",
+      "shape_file": "apple-18.gif",
+      "foreground_area_ratio": 0.1025390625
+    },
+    {
+      "image_id": 112,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_13",
+      "background_source": "1.2.06.tiff",
+      "foreground_source": "1.2.13.tiff",
+      "shape_file": "key-7.gif",
+      "foreground_area_ratio": 0.1670074462890625
+    },
+    {
+      "image_id": 113,
+      "background_class": "brodatz_10",
+      "foreground_class": "brodatz_08",
+      "background_source": "1.1.10.tiff",
+      "foreground_source": "1.1.08.tiff",
+      "shape_file": "lmfish-1.gif",
+      "foreground_area_ratio": 0.13494873046875
+    },
+    {
+      "image_id": 114,
+      "background_class": "brodatz_10",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.1.10.tiff",
+      "foreground_source": "1.1.01.tiff",
+      "shape_file": "bird-6.gif",
+      "foreground_area_ratio": 0.0877685546875
+    },
+    {
+      "image_id": 115,
+      "background_class": "brodatz_05",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.3.05.tiff",
+      "foreground_source": "1.1.04.tiff",
+      "shape_file": "cattle-8.gif",
+      "foreground_area_ratio": 0.1273651123046875
+    },
+    {
+      "image_id": 116,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.1.09.tiff",
+      "foreground_source": "1.2.04.tiff",
+      "shape_file": "elephant-5.gif",
+      "foreground_area_ratio": 0.139801025390625
+    },
+    {
+      "image_id": 117,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.3.12.tiff",
+      "foreground_source": "1.2.03.tiff",
+      "shape_file": "device9-13.gif",
+      "foreground_area_ratio": 0.0944671630859375
+    },
+    {
+      "image_id": 118,
+      "background_class": "brodatz_05",
+      "foreground_class": "brodatz_09",
+      "background_source": "1.1.05.tiff",
+      "foreground_source": "1.3.09.tiff",
+      "shape_file": "device1-4.gif",
+      "foreground_area_ratio": 0.18646240234375
+    },
+    {
+      "image_id": 119,
+      "background_class": "brodatz_04",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.3.04.tiff",
+      "foreground_source": "1.1.01.tiff",
+      "shape_file": "key-2.gif",
+      "foreground_area_ratio": 0.1444091796875
+    },
+    {
+      "image_id": 120,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.2.07.tiff",
+      "foreground_source": "1.3.03.tiff",
+      "shape_file": "truck-20.gif",
+      "foreground_area_ratio": 0.2223968505859375
+    },
+    {
+      "image_id": 121,
+      "background_class": "brodatz_05",
+      "foreground_class": "brodatz_08",
+      "background_source": "1.2.05.tiff",
+      "foreground_source": "1.3.08.tiff",
+      "shape_file": "hammer-13.gif",
+      "foreground_area_ratio": 0.0856781005859375
+    },
+    {
+      "image_id": 122,
+      "background_class": "brodatz_10",
+      "foreground_class": "brodatz_13",
+      "background_source": "1.2.10.tiff",
+      "foreground_source": "1.1.13.tiff",
+      "shape_file": "frog-10.gif",
+      "foreground_area_ratio": 0.2558135986328125
+    },
+    {
+      "image_id": 123,
+      "background_class": "brodatz_11",
+      "foreground_class": "brodatz_10",
+      "background_source": "1.3.11.tiff",
+      "foreground_source": "1.1.10.tiff",
+      "shape_file": "truck-09.gif",
+      "foreground_area_ratio": 0.294769287109375
+    },
+    {
+      "image_id": 124,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_05",
+      "background_source": "1.2.09.tiff",
+      "foreground_source": "1.1.05.tiff",
+      "shape_file": "deer-5.gif",
+      "foreground_area_ratio": 0.1839447021484375
+    },
+    {
+      "image_id": 125,
+      "background_class": "brodatz_11",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.1.11.tiff",
+      "foreground_source": "1.2.03.tiff",
+      "shape_file": "frog-20.gif",
+      "foreground_area_ratio": 0.122467041015625
+    },
+    {
+      "image_id": 126,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_10",
+      "background_source": "1.1.09.tiff",
+      "foreground_source": "1.1.10.tiff",
+      "shape_file": "device8-3.gif",
+      "foreground_area_ratio": 0.3072052001953125
+    },
+    {
+      "image_id": 127,
+      "background_class": "brodatz_01",
+      "foreground_class": "brodatz_09",
+      "background_source": "1.2.01.tiff",
+      "foreground_source": "1.3.09.tiff",
+      "shape_file": "jar-14.gif",
+      "foreground_area_ratio": 0.3079833984375
+    },
+    {
+      "image_id": 128,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_12",
+      "background_source": "1.1.02.tiff",
+      "foreground_source": "1.3.12.tiff",
+      "shape_file": "teddy-15.gif",
+      "foreground_area_ratio": 0.37591552734375
+    },
+    {
+      "image_id": 129,
+      "background_class": "brodatz_08",
+      "foreground_class": "brodatz_05",
+      "background_source": "1.3.08.tiff",
+      "foreground_source": "1.2.05.tiff",
+      "shape_file": "lizzard-14.gif",
+      "foreground_area_ratio": 0.1409454345703125
+    },
+    {
+      "image_id": 130,
+      "background_class": "brodatz_04",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.2.04.tiff",
+      "foreground_source": "1.1.03.tiff",
+      "shape_file": "chopper-13.gif",
+      "foreground_area_ratio": 0.1829376220703125
+    },
+    {
+      "image_id": 131,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.2.09.tiff",
+      "foreground_source": "1.2.11.tiff",
+      "shape_file": "camel-14.gif",
+      "foreground_area_ratio": 0.3046875
+    },
+    {
+      "image_id": 132,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_09",
+      "background_source": "1.1.02.tiff",
+      "foreground_source": "1.2.09.tiff",
+      "shape_file": "horseshoe-4.gif",
+      "foreground_area_ratio": 0.1717987060546875
+    },
+    {
+      "image_id": 133,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_09",
+      "background_source": "1.3.07.tiff",
+      "foreground_source": "1.1.09.tiff",
+      "shape_file": "device1-19.gif",
+      "foreground_area_ratio": 0.1537322998046875
+    },
+    {
+      "image_id": 134,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_09",
+      "background_source": "1.2.06.tiff",
+      "foreground_source": "1.2.09.tiff",
+      "shape_file": "device2-20.gif",
+      "foreground_area_ratio": 0.2160797119140625
+    },
+    {
+      "image_id": 135,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_08",
+      "background_source": "1.3.12.tiff",
+      "foreground_source": "1.2.08.tiff",
+      "shape_file": "lizzard-6.gif",
+      "foreground_area_ratio": 0.0897216796875
+    },
+    {
+      "image_id": 136,
+      "background_class": "brodatz_08",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.1.08.tiff",
+      "foreground_source": "1.2.11.tiff",
+      "shape_file": "Glas-18.gif",
+      "foreground_area_ratio": 0.1195068359375
+    },
+    {
+      "image_id": 137,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.1.12.tiff",
+      "foreground_source": "1.2.03.tiff",
+      "shape_file": "bat-13.gif",
+      "foreground_area_ratio": 0.0856475830078125
+    },
+    {
+      "image_id": 138,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.1.06.tiff",
+      "foreground_source": "1.1.11.tiff",
+      "shape_file": "brick-18.gif",
+      "foreground_area_ratio": 0.1117706298828125
+    },
+    {
+      "image_id": 139,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_02",
+      "background_source": "1.2.12.tiff",
+      "foreground_source": "1.1.02.tiff",
+      "shape_file": "pencil-11.gif",
+      "foreground_area_ratio": 0.0093536376953125
+    },
+    {
+      "image_id": 140,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.1.07.tiff",
+      "foreground_source": "1.3.11.tiff",
+      "shape_file": "tree-20.gif",
+      "foreground_area_ratio": 0.2267913818359375
+    },
+    {
+      "image_id": 141,
+      "background_class": "brodatz_13",
+      "foreground_class": "brodatz_09",
+      "background_source": "1.3.13.tiff",
+      "foreground_source": "1.2.09.tiff",
+      "shape_file": "Glas-8.gif",
+      "foreground_area_ratio": 0.1029815673828125
+    },
+    {
+      "image_id": 142,
+      "background_class": "brodatz_01",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.3.01.tiff",
+      "foreground_source": "1.1.04.tiff",
+      "shape_file": "deer-16.gif",
+      "foreground_area_ratio": 0.1103668212890625
+    },
+    {
+      "image_id": 143,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.2.07.tiff",
+      "foreground_source": "1.1.04.tiff",
+      "shape_file": "bottle-01.gif",
+      "foreground_area_ratio": 0.1366729736328125
+    },
+    {
+      "image_id": 144,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.3.12.tiff",
+      "foreground_source": "1.2.07.tiff",
+      "shape_file": "bird-19.gif",
+      "foreground_area_ratio": 0.119720458984375
+    },
+    {
+      "image_id": 145,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.2.02.tiff",
+      "foreground_source": "1.1.04.tiff",
+      "shape_file": "cup-6.gif",
+      "foreground_area_ratio": 0.271209716796875
+    },
+    {
+      "image_id": 146,
+      "background_class": "brodatz_13",
+      "foreground_class": "brodatz_06",
+      "background_source": "1.2.13.tiff",
+      "foreground_source": "1.2.06.tiff",
+      "shape_file": "horseshoe-11.gif",
+      "foreground_area_ratio": 0.123260498046875
+    },
+    {
+      "image_id": 147,
+      "background_class": "brodatz_11",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.3.11.tiff",
+      "foreground_source": "1.3.01.tiff",
+      "shape_file": "guitar-3.gif",
+      "foreground_area_ratio": 0.0963287353515625
+    },
+    {
+      "image_id": 148,
+      "background_class": "brodatz_10",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.2.10.tiff",
+      "foreground_source": "1.1.11.tiff",
+      "shape_file": "device9-19.gif",
+      "foreground_area_ratio": 0.1339111328125
+    },
+    {
+      "image_id": 149,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_12",
+      "background_source": "1.3.02.tiff",
+      "foreground_source": "1.1.12.tiff",
+      "shape_file": "stef-03.gif",
+      "foreground_area_ratio": 0.088104248046875
+    },
+    {
+      "image_id": 150,
+      "background_class": "brodatz_11",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.2.11.tiff",
+      "foreground_source": "1.1.07.tiff",
+      "shape_file": "pocket-12.gif",
+      "foreground_area_ratio": 0.109130859375
+    },
+    {
+      "image_id": 151,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_12",
+      "background_source": "1.2.02.tiff",
+      "foreground_source": "1.2.12.tiff",
+      "shape_file": "shoe-17.gif",
+      "foreground_area_ratio": 0.215179443359375
+    },
+    {
+      "image_id": 152,
+      "background_class": "brodatz_03",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.2.03.tiff",
+      "foreground_source": "1.3.07.tiff",
+      "shape_file": "cup-16.gif",
+      "foreground_area_ratio": 0.1310882568359375
+    },
+    {
+      "image_id": 153,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_06",
+      "background_source": "1.1.07.tiff",
+      "foreground_source": "1.1.06.tiff",
+      "shape_file": "key-2.gif",
+      "foreground_area_ratio": 0.134124755859375
+    },
+    {
+      "image_id": 154,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_06",
+      "background_source": "1.2.02.tiff",
+      "foreground_source": "1.2.06.tiff",
+      "shape_file": "pencil-11.gif",
+      "foreground_area_ratio": 0.0406036376953125
+    },
+    {
+      "image_id": 155,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.2.06.tiff",
+      "foreground_source": "1.1.03.tiff",
+      "shape_file": "device2-20.gif",
+      "foreground_area_ratio": 0.09307861328125
+    },
+    {
+      "image_id": 156,
+      "background_class": "brodatz_05",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.1.05.tiff",
+      "foreground_source": "1.1.07.tiff",
+      "shape_file": "jar-14.gif",
+      "foreground_area_ratio": 0.3171234130859375
+    },
+    {
+      "image_id": 157,
+      "background_class": "brodatz_10",
+      "foreground_class": "brodatz_08",
+      "background_source": "1.2.10.tiff",
+      "foreground_source": "1.1.08.tiff",
+      "shape_file": "shoe-2.gif",
+      "foreground_area_ratio": 0.10357666015625
+    },
+    {
+      "image_id": 158,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_12",
+      "background_source": "1.2.06.tiff",
+      "foreground_source": "1.2.12.tiff",
+      "shape_file": "cup-16.gif",
+      "foreground_area_ratio": 0.349395751953125
+    },
+    {
+      "image_id": 159,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_01",
+      "background_source": "1.3.07.tiff",
+      "foreground_source": "1.3.01.tiff",
+      "shape_file": "truck-09.gif",
+      "foreground_area_ratio": 0.227294921875
+    },
+    {
+      "image_id": 160,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.2.09.tiff",
+      "foreground_source": "1.2.11.tiff",
+      "shape_file": "chicken-14.gif",
+      "foreground_area_ratio": 0.3530120849609375
+    },
+    {
+      "image_id": 161,
+      "background_class": "brodatz_07",
+      "foreground_class": "brodatz_12",
+      "background_source": "1.3.07.tiff",
+      "foreground_source": "1.1.12.tiff",
+      "shape_file": "device2-20.gif",
+      "foreground_area_ratio": 0.12030029296875
+    },
+    {
+      "image_id": 162,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.3.02.tiff",
+      "foreground_source": "1.1.03.tiff",
+      "shape_file": "jar-10.gif",
+      "foreground_area_ratio": 0.239044189453125
+    },
+    {
+      "image_id": 163,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_08",
+      "background_source": "1.2.09.tiff",
+      "foreground_source": "1.1.08.tiff",
+      "shape_file": "device2-3.gif",
+      "foreground_area_ratio": 0.22674560546875
+    },
+    {
+      "image_id": 164,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.2.12.tiff",
+      "foreground_source": "1.2.04.tiff",
+      "shape_file": "device0-10.gif",
+      "foreground_area_ratio": 0.1861724853515625
+    },
+    {
+      "image_id": 165,
+      "background_class": "brodatz_04",
+      "foreground_class": "brodatz_13",
+      "background_source": "1.1.04.tiff",
+      "foreground_source": "1.1.13.tiff",
+      "shape_file": "device0-15.gif",
+      "foreground_area_ratio": 0.197998046875
+    },
+    {
+      "image_id": 166,
+      "background_class": "brodatz_11",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.3.11.tiff",
+      "foreground_source": "1.3.04.tiff",
+      "shape_file": "chicken-2.gif",
+      "foreground_area_ratio": 0.185821533203125
+    },
+    {
+      "image_id": 167,
+      "background_class": "brodatz_05",
+      "foreground_class": "brodatz_10",
+      "background_source": "1.3.05.tiff",
+      "foreground_source": "1.1.10.tiff",
+      "shape_file": "device5-11.gif",
+      "foreground_area_ratio": 0.1050872802734375
+    },
+    {
+      "image_id": 168,
+      "background_class": "brodatz_06",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.3.06.tiff",
+      "foreground_source": "1.2.07.tiff",
+      "shape_file": "shoe-2.gif",
+      "foreground_area_ratio": 0.1491851806640625
+    },
+    {
+      "image_id": 169,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_06",
+      "background_source": "1.1.02.tiff",
+      "foreground_source": "1.1.06.tiff",
+      "shape_file": "shoe-19.gif",
+      "foreground_area_ratio": 0.1613922119140625
+    },
+    {
+      "image_id": 170,
+      "background_class": "brodatz_03",
+      "foreground_class": "brodatz_09",
+      "background_source": "1.3.03.tiff",
+      "foreground_source": "1.2.09.tiff",
+      "shape_file": "children-10.gif",
+      "foreground_area_ratio": 0.0894012451171875
+    },
+    {
+      "image_id": 171,
+      "background_class": "brodatz_04",
+      "foreground_class": "brodatz_05",
+      "background_source": "1.2.04.tiff",
+      "foreground_source": "1.3.05.tiff",
+      "shape_file": "chicken-4.gif",
+      "foreground_area_ratio": 0.1392059326171875
+    },
+    {
+      "image_id": 172,
+      "background_class": "brodatz_08",
+      "foreground_class": "brodatz_05",
+      "background_source": "1.3.08.tiff",
+      "foreground_source": "1.1.05.tiff",
+      "shape_file": "turtle-11.gif",
+      "foreground_area_ratio": 0.157379150390625
+    },
+    {
+      "image_id": 173,
+      "background_class": "brodatz_04",
+      "foreground_class": "brodatz_08",
+      "background_source": "1.3.04.tiff",
+      "foreground_source": "1.1.08.tiff",
+      "shape_file": "lmfish-6.gif",
+      "foreground_area_ratio": 0.0834503173828125
+    },
+    {
+      "image_id": 174,
+      "background_class": "brodatz_08",
+      "foreground_class": "brodatz_12",
+      "background_source": "1.2.08.tiff",
+      "foreground_source": "1.3.12.tiff",
+      "shape_file": "horse-19.gif",
+      "foreground_area_ratio": 0.12188720703125
+    },
+    {
+      "image_id": 175,
+      "background_class": "brodatz_08",
+      "foreground_class": "brodatz_13",
+      "background_source": "1.2.08.tiff",
+      "foreground_source": "1.2.13.tiff",
+      "shape_file": "lmfish-6.gif",
+      "foreground_area_ratio": 0.10296630859375
+    },
+    {
+      "image_id": 176,
+      "background_class": "brodatz_05",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.2.05.tiff",
+      "foreground_source": "1.1.03.tiff",
+      "shape_file": "teddy-09.gif",
+      "foreground_area_ratio": 0.1931304931640625
+    },
+    {
+      "image_id": 177,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.2.12.tiff",
+      "foreground_source": "1.1.03.tiff",
+      "shape_file": "sea_snake-5.gif",
+      "foreground_area_ratio": 0.0931854248046875
+    },
+    {
+      "image_id": 178,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_08",
+      "background_source": "1.1.12.tiff",
+      "foreground_source": "1.3.08.tiff",
+      "shape_file": "tree-4.gif",
+      "foreground_area_ratio": 0.126617431640625
+    },
+    {
+      "image_id": 179,
+      "background_class": "brodatz_04",
+      "foreground_class": "brodatz_03",
+      "background_source": "1.2.04.tiff",
+      "foreground_source": "1.1.03.tiff",
+      "shape_file": "spring-12.gif",
+      "foreground_area_ratio": 0.0875091552734375
+    },
+    {
+      "image_id": 180,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.3.09.tiff",
+      "foreground_source": "1.1.04.tiff",
+      "shape_file": "bat-16.gif",
+      "foreground_area_ratio": 0.1138763427734375
+    },
+    {
+      "image_id": 181,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.2.12.tiff",
+      "foreground_source": "1.2.07.tiff",
+      "shape_file": "device6-7.gif",
+      "foreground_area_ratio": 0.1741943359375
+    },
+    {
+      "image_id": 182,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_06",
+      "background_source": "1.2.02.tiff",
+      "foreground_source": "1.1.06.tiff",
+      "shape_file": "device2-3.gif",
+      "foreground_area_ratio": 0.1919097900390625
+    },
+    {
+      "image_id": 183,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_02",
+      "background_source": "1.1.09.tiff",
+      "foreground_source": "1.1.02.tiff",
+      "shape_file": "teddy-15.gif",
+      "foreground_area_ratio": 0.3646392822265625
+    },
+    {
+      "image_id": 184,
+      "background_class": "brodatz_08",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.2.08.tiff",
+      "foreground_source": "1.1.07.tiff",
+      "shape_file": "stef-13.gif",
+      "foreground_area_ratio": 0.112884521484375
+    },
+    {
+      "image_id": 185,
+      "background_class": "brodatz_13",
+      "foreground_class": "brodatz_08",
+      "background_source": "1.3.13.tiff",
+      "foreground_source": "1.2.08.tiff",
+      "shape_file": "frog-8.gif",
+      "foreground_area_ratio": 0.1408233642578125
+    },
+    {
+      "image_id": 186,
+      "background_class": "brodatz_09",
+      "foreground_class": "brodatz_12",
+      "background_source": "1.1.09.tiff",
+      "foreground_source": "1.3.12.tiff",
+      "shape_file": "jar-10.gif",
+      "foreground_area_ratio": 0.3708038330078125
+    },
+    {
+      "image_id": 187,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_04",
+      "background_source": "1.2.02.tiff",
+      "foreground_source": "1.2.04.tiff",
+      "shape_file": "carriage-08.gif",
+      "foreground_area_ratio": 0.0909271240234375
+    },
+    {
+      "image_id": 188,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.1.12.tiff",
+      "foreground_source": "1.3.11.tiff",
+      "shape_file": "device3-14.gif",
+      "foreground_area_ratio": 0.426788330078125
+    },
+    {
+      "image_id": 189,
+      "background_class": "brodatz_04",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.2.04.tiff",
+      "foreground_source": "1.2.11.tiff",
+      "shape_file": "cattle-13.gif",
+      "foreground_area_ratio": 0.2427215576171875
+    },
+    {
+      "image_id": 190,
+      "background_class": "brodatz_10",
+      "foreground_class": "brodatz_13",
+      "background_source": "1.3.10.tiff",
+      "foreground_source": "1.3.13.tiff",
+      "shape_file": "watch-10.gif",
+      "foreground_area_ratio": 0.0935516357421875
+    },
+    {
+      "image_id": 191,
+      "background_class": "brodatz_10",
+      "foreground_class": "brodatz_05",
+      "background_source": "1.2.10.tiff",
+      "foreground_source": "1.3.05.tiff",
+      "shape_file": "bat-16.gif",
+      "foreground_area_ratio": 0.1078643798828125
+    },
+    {
+      "image_id": 192,
+      "background_class": "brodatz_05",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.2.05.tiff",
+      "foreground_source": "1.3.11.tiff",
+      "shape_file": "shoe-9.gif",
+      "foreground_area_ratio": 0.1555938720703125
+    },
+    {
+      "image_id": 193,
+      "background_class": "brodatz_12",
+      "foreground_class": "brodatz_11",
+      "background_source": "1.2.12.tiff",
+      "foreground_source": "1.1.11.tiff",
+      "shape_file": "Glas-18.gif",
+      "foreground_area_ratio": 0.0953521728515625
+    },
+    {
+      "image_id": 194,
+      "background_class": "brodatz_13",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.2.13.tiff",
+      "foreground_source": "1.1.07.tiff",
+      "shape_file": "cup-10.gif",
+      "foreground_area_ratio": 0.2420196533203125
+    },
+    {
+      "image_id": 195,
+      "background_class": "brodatz_13",
+      "foreground_class": "brodatz_05",
+      "background_source": "1.2.13.tiff",
+      "foreground_source": "1.1.05.tiff",
+      "shape_file": "turtle-8.gif",
+      "foreground_area_ratio": 0.1195220947265625
+    },
+    {
+      "image_id": 196,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.1.02.tiff",
+      "foreground_source": "1.1.07.tiff",
+      "shape_file": "horseshoe-4.gif",
+      "foreground_area_ratio": 0.12542724609375
+    },
+    {
+      "image_id": 197,
+      "background_class": "brodatz_10",
+      "foreground_class": "brodatz_07",
+      "background_source": "1.2.10.tiff",
+      "foreground_source": "1.1.07.tiff",
+      "shape_file": "bat-3.gif",
+      "foreground_area_ratio": 0.09820556640625
+    },
+    {
+      "image_id": 198,
+      "background_class": "brodatz_02",
+      "foreground_class": "brodatz_09",
+      "background_source": "1.1.02.tiff",
+      "foreground_source": "1.3.09.tiff",
+      "shape_file": "device0-2.gif",
+      "foreground_area_ratio": 0.2022857666015625
+    },
+    {
+      "image_id": 199,
+      "background_class": "brodatz_11",
+      "foreground_class": "brodatz_13",
+      "background_source": "1.3.11.tiff",
+      "foreground_source": "1.1.13.tiff",
+      "shape_file": "spring-12.gif",
+      "foreground_area_ratio": 0.08123779296875
+    },
+    {
+      "image_id": 200,
+      "background_class": "brodatz_05",
+      "foreground_class": "brodatz_13",
+      "background_source": "1.1.05.tiff",
+      "foreground_source": "1.2.13.tiff",
+      "shape_file": "lmfish-1.gif",
+      "foreground_area_ratio": 0.0829010009765625
+    }
+  ]
+}

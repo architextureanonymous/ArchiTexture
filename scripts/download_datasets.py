@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """Download ArchiTexture benchmark datasets from Kaggle and prepare them for eval.
 
-Downloads:
+Downloads from Kaggle (large datasets not committed to git):
   - ControlNet PTD 1742  → datasets/ControlNet_PTD_1742/
-  - DeTexture ADE20K 56  → datasets/ADE20k_Detexture_56/
+
+Already committed in this repo (no download needed):
+  - datasets/RWTD/
+  - datasets/STLD/
+  - datasets/ADE20k_Detexture_56/
 
 Then runs a CPU-only smoke check (file count + layout validation) on each.
 
@@ -169,6 +173,36 @@ def smoke_detexture(dest: Path) -> None:
         print("  DeTexture smoke check PASSED.")
 
 
+# ── committed dataset checks ──────────────────────────────────────────────────
+
+def smoke_committed(repo_root: Path) -> None:
+    checks = [
+        ("datasets/RWTD/image",  256, "RWTD images (all splits)"),
+        ("datasets/RWTD/edge",   256, "RWTD edges (all splits)"),
+        ("datasets/STLD/images", 200, "STLD images"),
+        ("datasets/STLD/labels", 200, "STLD labels"),
+        ("datasets/ADE20k_Detexture_56/assets/crops",  56,  "DeTexture crops"),
+        ("datasets/ADE20k_Detexture_56/assets/masks",  112, "DeTexture masks"),
+    ]
+    all_ok = True
+    print(f"  Smoke-checking committed datasets in {repo_root} …")
+    for rel, expected, label in checks:
+        d = repo_root / rel
+        if not d.is_dir():
+            print(f"    {label}: MISSING ({d})")
+            all_ok = False
+            continue
+        n = sum(1 for f in d.rglob("*") if f.is_file())
+        status = "OK" if n == expected else f"WARN (got {n}, expected {expected})"
+        print(f"    {label}: {n} files — {status}")
+        if n != expected:
+            all_ok = False
+    if all_ok:
+        print("  Committed datasets smoke check PASSED.")
+    else:
+        print("  WARNING: some committed datasets have unexpected counts.")
+
+
 # ── eval commands ─────────────────────────────────────────────────────────────
 
 def print_eval_commands(repo_root: Path) -> None:
@@ -198,10 +232,8 @@ def print_eval_commands(repo_root: Path) -> None:
     print( "    --device cuda --failure-policy skip \\")
     print( "    --output-dir outputs/detexture_fc_eval")
     print("""
-── Feature-clustering — RWTD and STLD ──────────────────────────────
-  RWTD and STLD image data are not publicly redistributed.
-  Mount local dataset drops to datasets/RWTD and datasets/STLD,
-  then run:
+── Feature-clustering — RWTD and STLD (GPU required) ───────────────
+  datasets/RWTD and datasets/STLD are committed in this repo.
 
   python scripts/feature_clustering/repro_table_1.py \\
     --output-root outputs/repro_table_1 \\
@@ -237,6 +269,7 @@ def main() -> None:
     print("\n── Smoke checks ───────────────────────────────────────────────────")
     smoke_controlnet(cstd_dest)
     smoke_detexture(detex_dest)
+    smoke_committed(repo_root)
 
     print_eval_commands(repo_root)
 

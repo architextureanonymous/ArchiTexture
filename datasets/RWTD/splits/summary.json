@@ -1,0 +1,7 @@
+{
+  "seed": 20260216,
+  "train_count": 10,
+  "eval_count": 246,
+  "paired_count": 256,
+  "train_is_disjoint_from_eval": true
+}

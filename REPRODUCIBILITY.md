@@ -37,11 +37,15 @@ All four benchmarks are evaluated under both routes on the **exact same dataset 
 
 Runs four official bundle evaluators on committed prediction masks. No training, no inference — masks are already committed.
 
+**Requires the OpenReview supplementary bundle.** Unzip `final_anonymous_release.zip` (from the OpenReview supplementary field) into the repo root so that `ArchiTexture_NeurIPS_ED_submission_20260502/` is present, then:
+
 ```bash
 python proposal_repro/verify_results.py
 ```
 
 Writes `proposal_repro/verified_results.json` and prints a match/fail table. All four rows must show `OK`.
+
+If you do not have the bundle, use the feature-clustering route below — it works entirely from this repository.
 
 | Dataset | Evaluator | Prediction masks |
 | --- | --- | --- |

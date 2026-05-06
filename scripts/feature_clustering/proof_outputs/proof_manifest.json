@@ -1,0 +1,65 @@
+{
+  "checks": {
+    "all_metrics_in_range": true,
+    "all_rows_are_genuine_replays": true,
+    "all_source_variants_match": true
+  },
+  "datasets": [
+    {
+      "ari": 0.83592100521292,
+      "crop_name": "1",
+      "dataset": "rwtd",
+      "eval_ari": 0.83592100521292,
+      "eval_miou": 0.8904936889013004,
+      "miou": 0.8904936889013004,
+      "output_image": "<REDACTED_PATH>",
+      "sample_index": "0",
+      "source": "rwtd/part1"
+    },
+    {
+      "ari": 0.6077666262062434,
+      "crop_name": "1",
+      "dataset": "stld",
+      "eval_ari": 0.6077666262062434,
+      "eval_miou": 0.7364963197220593,
+      "miou": 0.7364963197220593,
+      "output_image": "<REDACTED_PATH>",
+      "sample_index": "0",
+      "source": "architexture/stld/2026-03-"
+    },
+    {
+      "ari": 0.7015633513280772,
+      "crop_name": "img_3",
+      "dataset": "caid",
+      "eval_ari": 0.7015633513280772,
+      "eval_miou": 0.7733445354659201,
+      "miou": 0.7733445354659201,
+      "output_image": "<REDACTED_PATH>",
+      "sample_index": "0",
+      "source": "architexture/caid/2026-03-17_flipavg_eval"
+    },
+    {
+      "ari": 0.9405608534632989,
+      "crop_name": "000000",
+      "dataset": "cstd",
+      "eval_ari": 0.9405608534632989,
+      "eval_miou": 0.9678746021206663,
+      "miou": 0.9678746021206663,
+      "output_image": "<REDACTED_PATH>",
+      "sample_index": "0",
+      "source": "cstd/part3"
+    },
+    {
+      "ari": 0.351160220184545,
+      "crop_name": "testA_1",
+      "dataset": "glas",
+      "eval_ari": 0.351160220184545,
+      "eval_miou": 0.6046577673463402,
+      "miou": 0.6046577673463402,
+      "output_image": "<REDACTED_PATH>",
+      "sample_index": "0",
+      "source": "glas/glas_autosam_phase1_flipavg_baseline"
+    }
+  ],
+  "variant": "feature_cluster_coarse_to_fine_global_pooled_init_flip_avg_coarse_only"
+}

@@ -11,18 +11,18 @@ tectonic main.tex
 
 ## 2. Verify the committed main-result summaries
 
-The final matched comparison table is backed by the JSON summaries committed under:
+The definitive verification is the proposal-space verifier, which re-runs the evaluators against committed prediction masks and checks the output matches reported numbers:
 
-- `results/artifacts/main_results/rwtd_architexture_full256_official.json`
-- `results/artifacts/main_results/rwtd_architexture_common253_official.json`
-- `results/artifacts/main_results/rwtd_texturesam_common253_official.json`
-- `results/artifacts/main_results/rwtd_sam2_original_official.json`
-- `results/artifacts/main_results/stld_architexture_summary.json`
-- `results/artifacts/main_results/stld_texturesam_summary.json`
+```bash
+python proposal_repro/verify_results.py
+```
 
-The manifest mapping these files into the paper is:
+This writes `proposal_repro/verified_results.json` and prints a match/fail table. All four dataset rows must show `OK`.
+
+The narrative audit trail (experiment provenance, result manifest) is in:
 
 - `results/RESULTS_MANIFEST.md`
+- `results/EXPERIMENT_LEDGER.md`
 
 ## 3. Run lightweight local checks
 

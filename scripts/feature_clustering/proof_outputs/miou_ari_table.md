@@ -1,0 +1,9 @@
+# Proof Run
+
+| Dataset | Sample | mIoU | ARI | eval mIoU | eval ARI | Source | Visual |
+| --- | --- | ---: | ---: | ---: | ---: | --- | --- |
+| `rwtd` | `0:1` | `0.890494` | `0.835921` | `0.890494` | `0.835921` | `rwtd/part1` | `visuals/1.png` |
+| `stld` | `0:1` | `0.736496` | `0.607767` | `0.736496` | `0.607767` | `architexture/stld/2026-03-` | `visuals/1.png` |
+| `caid` | `0:img_3` | `0.773345` | `0.701563` | `0.773345` | `0.701563` | `architexture/caid/2026-03-17_flipavg_eval` | `visuals/img_3.png` |
+| `cstd` | `0:000000` | `0.967875` | `0.940561` | `0.967875` | `0.940561` | `cstd/part3` | `visuals/000000.png` |
+| `glas` | `0:testA_1` | `0.604658` | `0.351160` | `0.604658` | `0.351160` | `glas/glas_autosam_phase1_flipavg_baseline` | `visuals/testA_1.png` |

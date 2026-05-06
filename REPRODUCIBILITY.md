@@ -58,40 +58,47 @@ All evaluator scripts are from `ArchiTexture_NeurIPS_ED_submission_20260502/prop
 
 ## Feature-clustering route
 
-### RWTD and STLD
+`datasets/RWTD`, `datasets/STLD`, and `datasets/ADE20k_Detexture_56` are committed in this repository — no download needed for these three. ControlNet PTD 1742 requires one Kaggle download (see below).
+
+### RWTD and STLD (committed in repo, GPU required)
 
 ```bash
 python scripts/feature_clustering/repro_table_1.py \
-  --output-root outputs/repro_notebook/<run_id>/feature_clustering/table_1 \
+  --output-root outputs/repro_table_1 \
   --rwtd-root datasets/RWTD \
-  --stld-root datasets/STLD \
-  --cstd-root datasets/CSTD
+  --stld-root datasets/STLD
 ```
 
-### ControlNet bridge (bundle data)
+`--cstd-root` (ControlNet bridge) defaults to `datasets/ControlNet_PTD_1742` and auto-downloads from Kaggle if absent.
 
-Uses the 1742-image benchmark committed in the bundle — no separate download.
+### ControlNet bridge (Kaggle download, GPU required)
+
+Download the 1742-image benchmark first (761MB, requires a Kaggle account):
+
+```bash
+python scripts/download_datasets.py   # downloads, transforms, and smoke-checks
+```
+
+Then evaluate:
 
 ```bash
 python -m scripts.feature_clustering.main eval-cstd-binary \
-  --dataset-root ArchiTexture_NeurIPS_ED_submission_20260502/proposal-space-route/data/synthetic_texture_perlin_stitched_recovered/synthetic_texture_perlin_stitched \
+  --dataset-root datasets/ControlNet_PTD_1742 \
   --variant feature_cluster_coarse_to_fine_global_pooled_init_coarse_only_sam2 \
   --device cuda \
   --failure-policy skip \
-  --output-dir outputs/bundle_controlnet_fc_eval
+  --output-dir outputs/controlnet_fc_eval
 ```
 
-### DeTexture ADE20K (bundle data)
-
-Uses the 56-image curated validation set committed in the bundle — no separate download.
+### DeTexture ADE20K (committed in repo, GPU required)
 
 ```bash
-python scripts/eval_bundle_detexture_fc.py \
-  --benchmark-root ArchiTexture_NeurIPS_ED_submission_20260502/proposal-space-route/experiments/detexture_ade20k_eval_20260317/benchmarks/detexture_validation_refined \
+python -m scripts.feature_clustering.main eval-detexture-binary \
+  --dataset-root datasets/ADE20k_Detexture_56 \
   --variant feature_cluster_coarse_to_fine_global_pooled_init_coarse_only_sam2 \
   --device cuda \
   --failure-policy skip \
-  --output-dir outputs/bundle_detexture_fc_eval
+  --output-dir outputs/detexture_fc_eval
 ```
 
 ## Live proposal-space reproduction (optional)
@@ -120,11 +127,11 @@ Computed at runtime from committed masks and local dataset images. Runs automati
 
 ## Standalone t-sweep
 
-Replays the ControlNet `t` sweep with the bundled checkpoint and texture pool.
+Replays the ControlNet `t` sweep with a bundled checkpoint and texture pool. The checkpoint and texture pool (~1.5GB total) are included in the OpenReview supplementary bundle but not in this repo. With the bundle present at `ArchiTexture_NeurIPS_ED_submission_20260502/`:
 
 ```bash
 python scripts/standalone_t_sweep_bundle/run_t_sweep.py \
-  --output_path outputs/repro_notebook/<run_id>/standalone_t_sweep_smoke \
+  --output_path outputs/standalone_t_sweep_smoke \
   --row_seeds 1,3,6,14 \
   --t_values 100,189,278,367,456,544,633,722,811,900 \
   --controlnet_path scripts/standalone_t_sweep_bundle/controlnet_rwtd_checkpoints/controlnet-500 \
@@ -136,7 +143,8 @@ python scripts/standalone_t_sweep_bundle/run_t_sweep.py \
 
 ## Troubleshooting
 
-- Missing `datasets/RWTD` or `datasets/STLD` — mount local drops before running feature-clustering.
+- `rwtd_sam3` not found — run `pip install -e scripts/feature_clustering` from the repo root.
 - Missing `runwayml/stable-diffusion-v1-5` — let the notebook fetch it once with network access, or prepopulate the HuggingFace cache.
-- Missing feature-clustering imports (`einops` etc.) — re-run the setup cell; it installs both the top-level repo and `scripts/feature_clustering`.
+- Missing feature-clustering imports (`einops`, `timm` etc.) — run `pip install -r scripts/feature_clustering/requirements.txt`.
 - Wrong kernel — restart Jupyter from the `.venv` environment.
+- ControlNet download fails — ensure `~/.kaggle/kaggle.json` exists or `KAGGLE_USERNAME`/`KAGGLE_KEY` env vars are set.

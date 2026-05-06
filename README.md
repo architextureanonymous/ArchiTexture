@@ -94,32 +94,53 @@ The method therefore isolates decision-layer recoverability instead of burying t
 ## Quick Start
 
 ```bash
+git clone https://github.com/architextureanonymous/ArchiTexture
+cd ArchiTexture
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 pip install -e .
 pip install -e scripts/feature_clustering
-python -m unittest discover -s tests -v
+python -m pytest tests/ -v
 jupyter notebook notebooks/reproducibility.ipynb
 ```
 
-The unified notebook now starts with the ArchiTexture readout: it runs the helper script, then shows the compact headline table, the generated visuals, and the supporting tables. The feature-clustering section runs below that by default once the editable bundle is installed, and the final t-sweep section replays the standalone ControlNet demo on CUDA.
+**Datasets included in this repo** (no download needed):
+- `datasets/RWTD/` — 256 images + edges + splits
+- `datasets/STLD/` — 200 synthetic texture images + labels
+- `datasets/ADE20k_Detexture_56/` — 56 curated crops + paired masks
+
+**ControlNet PTD 1742** (761MB) requires one Kaggle download:
+```bash
+python scripts/download_datasets.py   # auto-downloads, transforms, smoke-checks
+```
 
 To rebuild the paper PDF:
 
 ```bash
-cd paper
-tectonic main.tex
+cd paper && tectonic main.tex
 ```
 
-## Fastest Audit Path
+## Fastest Audit Path (no GPU needed)
 
 1. Read the paper: [paper/main.pdf](paper/main.pdf)
 2. Open the notebook: [notebooks/reproducibility.ipynb](notebooks/reproducibility.ipynb)
-3. Read the Markdown mirror: [REPRODUCIBILITY.md](REPRODUCIBILITY.md)
-4. Verify where each figure and table comes from: [results/RESULTS_MANIFEST.md](results/RESULTS_MANIFEST.md)
-5. Inspect the exact retained commands and output roots: [results/EXPERIMENT_LEDGER.md](results/EXPERIMENT_LEDGER.md)
-6. Check the committed summary artifacts under the retained results package
+3. Read the terminal guide: [REPRODUCIBILITY.md](REPRODUCIBILITY.md)
+4. Verify result provenance: [results/RESULTS_MANIFEST.md](results/RESULTS_MANIFEST.md)
+5. Inspect experiment commands: [results/EXPERIMENT_LEDGER.md](results/EXPERIMENT_LEDGER.md)
+
+**To verify proposal-space numbers** (requires the OpenReview supplementary ZIP):
+```bash
+# Unzip final_anonymous_release.zip into repo root, then:
+python proposal_repro/verify_results.py
+```
+
+**To re-run feature-clustering on committed datasets** (GPU required):
+```bash
+python scripts/feature_clustering/repro_table_1.py \
+  --rwtd-root datasets/RWTD --stld-root datasets/STLD \
+  --output-root outputs/repro_table_1
+```
 
 ## Scope Discipline
 

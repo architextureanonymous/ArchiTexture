@@ -1,0 +1,158 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "sc": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "dct": "http://purl.org/dc/terms/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "citeAs": "cr:citeAs",
+    "conformsTo": "cr:conformsTo",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": {
+      "@id": "cr:isLiveDataset",
+      "@type": "xsd:boolean"
+    },
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": {
+      "@id": "cr:repeated",
+      "@type": "xsd:boolean"
+    },
+    "replace": "cr:replace",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "extract": "cr:extract",
+    "column": "cr:column"
+  },
+  "@type": "sc:Dataset",
+  "name": "architexture-controlnet-ptd-1742",
+  "description": "Exact 1,742-sample ControlNet-stitched PTD evaluation set used for the NeurIPS 2026 submission appendix results (Table 15, Supporting Route E). Label-symmetric binary partitions generated via ControlNet-conditioned stitched-regeneration pipeline. ARCHITEXTURE Stage-A: all-1742, 1742/1742, invariant mIoU=0.6803, ARI=0.6039.",
+  "url": "https://www.kaggle.com/datasets/architexanonymous/architexture-controlnet-ptd-1742",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "version": "1.0.0",
+  "datePublished": "2026-05-06",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "rai:dataLimitations": "This dataset targets texture-defined binary partitioning under synthetic ControlNet-stitched bridge conditions. It should not be used as a general semantic segmentation benchmark, for object recognition, or as evidence of performance on safety-critical domains.",
+  "rai:dataBiases": "Inherits biases from DTD source texture distributions, the ControlNet/Stable Diffusion v1.5 generation process, prompt choices, and binary partition construction via geometric stitching. May overrepresent clean two-region transitions.",
+  "rai:personalSensitiveInformation": "No intentional human-subject, biometric, demographic, medical-identifying, or private personal information is included. All images are synthetically generated stitched texture pairs.",
+  "rai:dataUseCases": "Research on texture-aware segmentation, binary partition evaluation, proposal-bank consolidation, synthetic-to-natural bridge benchmarks, and reproducibility of the NeurIPS 2026 appendix ControlNet-stitched PTD route.",
+  "rai:notRecommendedUses": "General semantic segmentation benchmark claims, human identity tasks, surveillance, medical diagnosis, or safety-critical deployment.",
+  "rai:hasSyntheticData": true,
+  "prov:wasDerivedFrom": "DTD (Describable Textures Dataset, CC-BY 4.0); ControlNet conditioned on Stable Diffusion v1.5 (CreativeML Open RAIL-M); PTD stitched-regeneration pipeline",
+  "prov:wasGeneratedBy": "ControlNet-conditioned stitched-regeneration pipeline: source textures from DTD, pairs stitched via binary geometric masks, regenerated through ControlNet. Binary GT masks from stitching geometry (label-symmetric). Filtered to 1,742 samples with valid partition structure.",
+  "distribution": [
+    {
+      "@type": "sc:FileObject",
+      "@id": "manifest-csv",
+      "name": "manifest.csv",
+      "description": "One row per sample: sample_id, image_path, mask_path, split, label_symmetric, eval_included",
+      "contentUrl": "manifest.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "see-checksums-sha256sums-txt"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "samples",
+      "name": "samples",
+      "description": "1,742 evaluation samples",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "samples/sample_id",
+          "name": "sample_id",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "manifest-csv"
+            },
+            "extract": {
+              "column": "sample_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/image_path",
+          "name": "image_path",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "manifest-csv"
+            },
+            "extract": {
+              "column": "image_path"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/mask_path",
+          "name": "mask_path",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "manifest-csv"
+            },
+            "extract": {
+              "column": "mask_path"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/label_symmetric",
+          "name": "label_symmetric",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "manifest-csv"
+            },
+            "extract": {
+              "column": "label_symmetric"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/eval_included",
+          "name": "eval_included",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "manifest-csv"
+            },
+            "extract": {
+              "column": "eval_included"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

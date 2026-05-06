@@ -1,24 +1,17 @@
-# Reproducibility Notebook
+# Reproducibility
 
 This is the terminal mirror of [notebooks/reproducibility.ipynb](notebooks/reproducibility.ipynb).
-The notebook is unified and minimal:
 
-1. setup
-2. ArchiTexture headline table
-3. proposal-space result verification (computed from committed masks)
-4. case gallery visualization (computed from committed masks + dataset images)
-5. live proposal-space training reproduction (optional)
-6. live feature-clustering reproduction
-7. DeTexture ADE20K smoke evaluation (optional)
-8. standalone t-sweep experiment
+## Hosted datasets
 
-## Goal
+| Dataset | Kaggle URL | n | Croissant |
+|---|---|---|---|
+| ControlNet-stitched PTD | https://www.kaggle.com/datasets/architexanonymous/architexture-controlnet-ptd-1742 | 1,742 | `croissant/controlnet_ptd_1742_croissant.json` |
+| DeTexture ADE20K (validation-only) | https://www.kaggle.com/datasets/architexanonymous/architexture-detexture-ade20k-56 | 56 | `croissant/detexture_ade20k_56_croissant.json` |
 
-Show the reviewer the main final numbers first, then run a live proposal-space train/inference smoke path before the heavier feature-clustering and t-sweep sections.
+For NeurIPS reviewer access, enable private link sharing on each dataset in the Kaggle UI. See [docs/DATA_ACCESS.md](docs/DATA_ACCESS.md) for full details.
 
 ## Setup
-
-Recommended terminal flow:
 
 ```bash
 python -m venv .venv
@@ -29,69 +22,90 @@ pip install -e scripts/feature_clustering
 jupyter notebook notebooks/reproducibility.ipynb
 ```
 
-The notebook includes a runnable setup cell. It installs the same requirements into the active kernel, then installs the editable feature-clustering bundle, then checks the environment in place. It does not switch kernels.
+## Results
 
-## ArchiTexture Headline Table
+All four benchmarks are evaluated under both routes on the **exact same dataset instances** committed in the bundle. The numbers below are reproduced by running the commands in the sections that follow.
 
-The first notebook section runs the proposal-bank readout script into a fresh output root under `outputs/repro_notebook/<run_id>/architexture/`, then shows:
+| Dataset | n | Proposal-space mIoU | Proposal-space ARI | Feature-clustering mIoU | Feature-clustering ARI |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| RWTD | 256 | `0.4611` | `0.6966` | `0.8395` | `0.7261` |
+| STLD | 182 (covered) | `0.7195` | `0.7791` | `0.7522` | `0.6176` |
+| ControlNet bridge | 1742 | `0.6803` | `0.6039` | `0.8424` | `0.7314` |
+| DeTexture ADE20K | 56 | `0.5008` | `0.3675` | `0.7435` | `0.5532` |
 
-1. the compact two-row headline table
-2. the generated visuals
-3. the supporting tables
+## Proposal-space route
 
-| Benchmark | Evaluator / subset | mIoU | ARI |
-| --- | --- | ---: | ---: |
-| RWTD | official invariant, full-256 | `0.4611` | `0.6966` |
-| STLD | direct foreground, all-200 | `0.6705` | `0.7249` |
-
-The helper behind that section is:
+Runs four official bundle evaluators on committed prediction masks. No training, no inference — masks are already committed.
 
 ```bash
-python scripts/repro/proposal_bank_readout.py \
-  --output-root outputs/repro_notebook/<run_id>/architexture
+python proposal_repro/verify_results.py
 ```
 
-It writes fresh tables, copies the paper figures into the run root, and emits a small manifest for the run.
+Writes `proposal_repro/verified_results.json` and prints a match/fail table. All four rows must show `OK`.
 
-## Proposal Repro
+| Dataset | Evaluator | Prediction masks |
+| --- | --- | --- |
+| RWTD | `eval_upstream_texture_metrics.py` — per-GT-instance IoU/ARI | `proposal-space-route/reports/release_swinb_full256_audit/official_export/` |
+| STLD | `eval_stld_direct.py` — direct-foreground IoU/ARI, ArchiTexture **covered-182** row | `proposal-space-route/experiments/khan_synthetic_gallery_20260312/eval/strict_ptd_learned/masks/` |
+| ControlNet bridge | `eval_binary_partition_maskbank.py` — partition-invariant IoU/ARI | `proposal-space-route/experiments/perlin_controlnet_eval_20260312/full_0p3/stageA_0p3/strict_ptd_learned/masks/` |
+| DeTexture ADE20K | `eval_two_mask_partition_maskbank.py` — two-mask partition-invariant IoU/ARI | `proposal-space-route/experiments/detexture_ade20k_eval_20260317/full_validation/stageA_0p3/strict_ptd_learned/masks/` |
 
-The next section is the reviewer-safe live proposal-space reproduction. Training does **not** use RWTD or STLD labels. The script first generates texture-partition composites using the same PTD-style synthetic partition machinery used by the proposal-space training code, trains a lightweight proposal selector on those generated samples, and then evaluates only on RWTD and STLD.
+All evaluator scripts are from `ArchiTexture_NeurIPS_ED_submission_20260502/proposal-space-route/scripts/`.
 
-The first output is the requested table:
+## Feature-clustering route
 
-| Dataset | MIOU | ARI |
-| --- | ---: | ---: |
-| RWTD | produced by the run | produced by the run |
-| STLD | produced by the run | produced by the run |
-
-The notebook writes a fresh run under:
-
-- `outputs/repro_notebook/<run_id>/proposal_repro`
-
-The terminal command is:
+### RWTD and STLD
 
 ```bash
-python proposal_repro/run_proposal_repro.py   --output-root outputs/repro_notebook/<run_id>/proposal_repro   --rwtd-root datasets/RWTD   --stld-root datasets/STLD
+python scripts/feature_clustering/repro_table_1.py \
+  --output-root outputs/repro_notebook/<run_id>/feature_clustering/table_1 \
+  --rwtd-root datasets/RWTD \
+  --stld-root datasets/STLD \
+  --cstd-root datasets/CSTD
 ```
 
-The first file to inspect is:
+### ControlNet bridge (bundle data)
 
-- `proposal_repro_table.csv`: rows `RWTD`, `STLD`; columns `MIOU`, `ARI`
+Uses the 1742-image benchmark committed in the bundle — no separate download.
 
-Supporting files:
+```bash
+python -m scripts.feature_clustering.main eval-cstd-binary \
+  --dataset-root ArchiTexture_NeurIPS_ED_submission_20260502/proposal-space-route/data/synthetic_texture_perlin_stitched_recovered/synthetic_texture_perlin_stitched \
+  --variant feature_cluster_coarse_to_fine_global_pooled_init_coarse_only_sam2 \
+  --device cuda \
+  --failure-policy skip \
+  --output-dir outputs/bundle_controlnet_fc_eval
+```
 
-- `summary.json`: selected run configuration and aggregate table values
-- `training_candidates.csv`: generated-training proposal candidates and targets
-- `inference_metrics.csv`: per-sample RWTD/STLD held-out inference metrics
-- `visuals/*/*.png`: input, proposal union, GT, and prediction panels
+### DeTexture ADE20K (bundle data)
 
-The public reviewer package does not include the heavyweight frozen SAM prompt-bank exports used by the paper-scale artifact readout. This live repro therefore builds deterministic image-derived proposal banks for evaluation, while keeping all selector training on generated texture composites rather than RWTD/STLD. The paper-scale RWTD/STLD numbers above remain the retained full-run readout.
+Uses the 56-image curated validation set committed in the bundle — no separate download.
 
-## Case Gallery Visualization
+```bash
+python scripts/eval_bundle_detexture_fc.py \
+  --benchmark-root ArchiTexture_NeurIPS_ED_submission_20260502/proposal-space-route/experiments/detexture_ade20k_eval_20260317/benchmarks/detexture_validation_refined \
+  --variant feature_cluster_coarse_to_fine_global_pooled_init_coarse_only_sam2 \
+  --device cuda \
+  --failure-policy skip \
+  --output-dir outputs/bundle_detexture_fc_eval
+```
 
-The notebook computes two gallery figures **at runtime** from committed masks and local dataset images — not from pre-shipped PNGs. The gallery cell runs automatically after the verification cell and requires no flags.
+## Live proposal-space reproduction (optional)
 
-Each gallery shows four columns per image row:
+Trains and evaluates a fresh proposal-space selector without using RWTD or STLD labels. Produces numbers close to but not identical to the committed readout (different random seed, image-derived proposal banks).
+
+```bash
+python proposal_repro/run_proposal_repro.py \
+  --output-root outputs/repro_notebook/<run_id>/proposal_repro \
+  --rwtd-root datasets/RWTD \
+  --stld-root datasets/STLD
+```
+
+Output: `proposal_repro_table.csv` (rows `RWTD`, `STLD`; columns `MIOU`, `ARI`).
+
+## Case gallery visualization
+
+Computed at runtime from committed masks and local dataset images. Runs automatically after the verification cell in the notebook. No standalone terminal command — copy the gallery cell and run with `REPO_ROOT` set to the checkout root.
 
 | Column | Source |
 | --- | --- |
@@ -100,91 +114,9 @@ Each gallery shows four columns per image row:
 | Selector | `reports/final_round_learned_single_selector_{rwtd,stld}/…/mask…` |
 | ArchiTexture | RWTD: `reports/release_swinb_full256_audit/official_export/mask_0_{id}.png` · STLD: `eval/strict_ptd_learned/masks/{id}.png` |
 
-The "Fragments", "Core", and "Oracle single" columns from the paper figure require the frozen SAM proposal banks (not distributed) and are omitted.
+## Standalone t-sweep
 
-There is no standalone terminal command for this section — it uses the same Python environment as the notebook and reads directly from the committed submission artifacts. To reproduce it outside the notebook, copy the gallery cell source and run it as a plain script with `REPO_ROOT` set to the checkout root.
-
-## DeTexture ADE20K (optional)
-
-Set `RUN_DETEXTURE = True` in the DeTexture notebook cell to download and smoke-test the curated benchmark.
-
-### Download
-
-```bash
-# via huggingface-cli (requires huggingface_hub installed)
-huggingface-cli download anon-detexture-neurips-2026/ADE20k_Detecture \
-  --repo-type dataset \
-  --local-dir datasets/ADE20k_Detexture
-```
-
-Expected layout after download:
-
-```
-datasets/ADE20k_Detexture/
-  assets/
-    crops/       ← crop images
-    masks/       ← {id}_mask_a.png, {id}_mask_b.png
-```
-
-### Smoke test (5 samples)
-
-```bash
-rwtd-sam3 eval-detexture-binary \
-  --dataset-root datasets/ADE20k_Detexture \
-  --variant feature_cluster_coarse_to_fine_global_pooled_init_coarse_only \
-  --limit 5 \
-  --save-visuals \
-  --output-dir outputs/detexture_smoke \
-  --device cuda \
-  --failure-policy skip
-```
-
-Writes `per_sample_metrics.csv`, `summary.json`, and `visuals/` under `outputs/detexture_smoke/`.
-
-### Full evaluation
-
-```bash
-rwtd-sam3 eval-detexture-binary \
-  --dataset-root datasets/ADE20k_Detexture \
-  --variant feature_cluster_coarse_to_fine_global_pooled_init_coarse_only \
-  --save-visuals \
-  --output-dir outputs/detexture_full \
-  --device cuda
-```
-
-## Feature Clustering
-
-The feature-clustering section runs by default and writes fresh outputs under:
-
-- `outputs/repro_notebook/<run_id>/feature_clustering/table_1`
-- `outputs/repro_notebook/<run_id>/feature_clustering/figure_2`
-
-The commands are:
-
-```bash
-python scripts/feature_clustering/repro_table_1.py \
-  --output-root outputs/repro_notebook/<run_id>/feature_clustering/table_1 \
-  --rwtd-root datasets/RWTD \
-  --stld-root datasets/STLD
-
-python scripts/feature_clustering/repro_figure_2.py \
-  --output-root outputs/repro_notebook/<run_id>/feature_clustering/figure_2 \
-  --rwtd-root datasets/RWTD \
-  --stld-root datasets/STLD \
-  --examples-per-dataset 3
-```
-
-The notebook then displays the fresh `table_1.csv` summary and the generated Figure 2-style panels.
-
-## Standalone t-Sweep
-
-The final live section in the notebook replays the standalone ControlNet `t` sweep with the bundled checkpoint and texture pool.
-
-It writes a fresh export tree under:
-
-- `outputs/repro_notebook/<run_id>/standalone_t_sweep_smoke`
-
-The notebook uses the same row seeds and `t` values as the standalone bundle demo:
+Replays the ControlNet `t` sweep with the bundled checkpoint and texture pool.
 
 ```bash
 python scripts/standalone_t_sweep_bundle/run_t_sweep.py \
@@ -198,22 +130,9 @@ python scripts/standalone_t_sweep_bundle/run_t_sweep.py \
   --use_perlin
 ```
 
-The section renders the resulting 4-row by 11-column image grid inline, with one hard-stitched column and ten `t` samples per row.
-
 ## Troubleshooting
 
-- Missing `datasets/RWTD` or `datasets/STLD`
-  - Mount the local drops before running the feature-clustering section.
-- Missing the base diffusion model `runwayml/stable-diffusion-v1-5`
-  - Let the notebook fetch it once with network access, or prepopulate the Hugging Face cache before running the t-sweep section.
-- If the active kernel is not the environment you want, restart Jupyter from the intended virtual environment.
-- Missing proposal-bank artifact trees
-  - The helper mirrors the paper readout from the local `paper/` tables and figures in this checkout, so it does not depend on the heavyweight final-round artifact tree.
-- Missing feature-clustering imports such as `einops`
-  - Re-run the setup cell. It installs both the top-level repo and the editable `scripts/feature_clustering` bundle.
-
-## Notes
-
-- The setup cell installs requirements into the active kernel. If you prefer a separate virtual environment, create `.venv` first and launch Jupyter from that environment.
-- The readout section runs the helper first, then renders the headline table, visuals, and supporting tables from the fresh run root.
-- All outputs are written under `outputs/repro_notebook/<run_id>/`. The notebook reads only from the fresh run tree it just created.
+- Missing `datasets/RWTD` or `datasets/STLD` — mount local drops before running feature-clustering.
+- Missing `runwayml/stable-diffusion-v1-5` — let the notebook fetch it once with network access, or prepopulate the HuggingFace cache.
+- Missing feature-clustering imports (`einops` etc.) — re-run the setup cell; it installs both the top-level repo and `scripts/feature_clustering`.
+- Wrong kernel — restart Jupyter from the `.venv` environment.

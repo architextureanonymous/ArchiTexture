@@ -1,0 +1,158 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "sc": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "dct": "http://purl.org/dc/terms/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "citeAs": "cr:citeAs",
+    "conformsTo": "cr:conformsTo",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": {
+      "@id": "cr:isLiveDataset",
+      "@type": "xsd:boolean"
+    },
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": {
+      "@id": "cr:repeated",
+      "@type": "xsd:boolean"
+    },
+    "replace": "cr:replace",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "extract": "cr:extract",
+    "column": "cr:column"
+  },
+  "@type": "sc:Dataset",
+  "name": "architexture-detexture-ade20k-56",
+  "description": "Exact 56-sample validation-only refined crop set used for the post-paper DeTexture ADE20K diagnostic. Validation-split only (excludes 697 training-prefixed crops) to avoid ADE20K train-set leakage into the TextureSAM baseline comparison. ARCHITEXTURE Stage-A: 56 samples, invariant mIoU=0.7435, ARI=0.5532.",
+  "url": "https://www.kaggle.com/datasets/architexanonymous/architexture-detexture-ade20k-56",
+  "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "version": "1.0.0",
+  "datePublished": "2026-05-06",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "rai:dataLimitations": "Contains derived crops from ADE20K validation images. Only 56 validation-prefixed samples included; 697 training-prefixed crops excluded to avoid TextureSAM baseline contamination. Results should not be generalized beyond the texture-transition boundary task.",
+  "rai:dataBiases": "Inherits biases from ADE20K scene composition, annotation conventions, and the DeTexture refined-variant filter. May overrepresent clean boundary cases. Validation-only split introduces selection bias relative to the full 753-entry gallery.",
+  "rai:personalSensitiveInformation": "ADE20K source images may contain incidental depictions of people in scene context. No biometric data, demographic labels, or intentionally personal information is included.",
+  "rai:dataUseCases": "Research on texture-aware binary segmentation, two-mask partition-invariant evaluation, and post-paper diagnostic reproducibility for the DeTexture ADE20K validation route.",
+  "rai:notRecommendedUses": "Training-split benchmark claims, general ADE20K scene understanding, object recognition, human identity tasks, surveillance, medical diagnosis, or safety-critical deployment.",
+  "rai:hasSyntheticData": false,
+  "prov:wasDerivedFrom": "ADE20K dataset (MIT License, research use); DeTexture ADE20K pipeline (github.com/aviadcohz/detexture_ADE20K, commit c22d62ab7917a3e3acb5a45d8a4ecdf57e8aa108)",
+  "prov:wasGeneratedBy": "DeTexture pipeline on ADE20K validation images producing paired binary texture-transition crops. Refined-variant gallery filter (valid_fraction_mean=0.997) selects 56 highest-quality validation-split crops. Two-mask GT: labels_a and labels_b define exclusive partitions.",
+  "distribution": [
+    {
+      "@type": "sc:FileObject",
+      "@id": "manifest-csv",
+      "name": "manifest.csv",
+      "description": "One row per sample: sample_id, image_path, labels_a_path, labels_b_path, split, valid_fraction",
+      "contentUrl": "manifest.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "see-checksums-sha256sums-txt"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "samples",
+      "name": "samples",
+      "description": "56 validation-split evaluation samples",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "samples/sample_id",
+          "name": "sample_id",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "manifest-csv"
+            },
+            "extract": {
+              "column": "sample_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/image_path",
+          "name": "image_path",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "manifest-csv"
+            },
+            "extract": {
+              "column": "image_path"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/labels_a_path",
+          "name": "labels_a_path",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "manifest-csv"
+            },
+            "extract": {
+              "column": "labels_a_path"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/labels_b_path",
+          "name": "labels_b_path",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "manifest-csv"
+            },
+            "extract": {
+              "column": "labels_b_path"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/valid_fraction",
+          "name": "valid_fraction",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "manifest-csv"
+            },
+            "extract": {
+              "column": "valid_fraction"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

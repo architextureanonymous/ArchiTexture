@@ -1,0 +1,6 @@
+Status: PASS
+Errors: 0
+Warnings: 1
+
+WARNINGS:
+('Property "https://schema.org/citation" is recommended, but does not exist.', M
